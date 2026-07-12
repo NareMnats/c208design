@@ -1,7 +1,9 @@
-export default function Home() {
+import Hero from "@/components/sections/Hero";
+
+export default function HomePage() {
   return (
     <main>
-      <h1>C208 Design</h1>
+      <Hero />
     </main>
   );
 }
