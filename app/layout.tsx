@@ -15,8 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-title: "C208 Design",
-description: "Branding, photography, and creative services for schools and organizations.",
+  title: {
+    default: "C208 Design",
+    template: "%s | C208 Design",
+  },
+  description:
+    "Branding, design, photography, and creative services for schools, organizations, and communities.",
 };
 
 export default function RootLayout({
@@ -25,19 +29,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-    <body
-  className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-[#111111]`}
->
-  <Navbar />
-
-  {children}
-
-  <Footer />
-</body>
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} bg-white text-[#111111] antialiased`}
+      >
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

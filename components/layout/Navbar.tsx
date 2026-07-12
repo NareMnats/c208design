@@ -16,12 +16,20 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const isHomepage = pathname === "/";
+
   function closeMenu() {
     setMenuOpen(false);
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur-md">
+    <header
+  className={`z-50 w-full transition-colors ${
+    isHomepage
+      ? "absolute left-0 top-0 bg-transparent text-white"
+      : "sticky top-0 border-b border-black/10 bg-white/95 text-[#111111] backdrop-blur-md"
+  }`}
+>
       <Container>
         <div className="flex h-20 items-center justify-between md:h-24">
           <Link
@@ -31,13 +39,17 @@ export default function Navbar() {
             className="shrink-0"
           >
             <Image
-              src="/c208-logo.png"
-              alt="C208 Design"
-              width={1140}
-              height={881}
-              priority
-              className="h-auto w-[72px] sm:w-[78px] md:w-[86px]"
-            />
+  src={
+    isHomepage
+      ? "/c208-logo-whitecyan.png"
+      : "/c208-logo-blackcyan.png"
+  }
+  alt="C208 Design"
+  width={1140}
+  height={881}
+  priority
+  className="h-auto w-[72px] sm:w-[78px] md:w-[86px]"
+/>
           </Link>
 
           <nav
@@ -51,16 +63,18 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative py-3 text-sm font-medium transition-colors ${
-                    active
-                      ? "text-[#111111]"
-                      : "text-[#111111]/75 hover:text-[#111111]"
+                  className={`relative py-3 text-sm font-medium transition-opacity hover:opacity-60 ${
+                    isHomepage ? "text-white" : "text-[#111111]"
                   }`}
                 >
                   {item.label}
 
                   {active && (
-                    <span className="absolute inset-x-0 bottom-1 h-px bg-[#111111]" />
+                    <span
+                      className={`absolute inset-x-0 bottom-1 h-px ${
+                        isHomepage ? "bg-white" : "bg-[#111111]"
+                      }`}
+                    />
                   )}
                 </Link>
               );
@@ -68,7 +82,11 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className="rounded-full bg-[#acdcd7] px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#9fcfc9]"
+              className={`rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
+                isHomepage
+                  ? "border border-white/50 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
+                  : "bg-[#acdcd7] text-[#111111] hover:bg-[#9fcfc9]"
+              }`}
             >
               Contact
             </Link>
@@ -80,7 +98,11 @@ export default function Navbar() {
             aria-controls="mobile-navigation"
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             onClick={() => setMenuOpen((current) => !current)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/15 text-[#111111] md:hidden"
+            className={`flex h-11 w-11 items-center justify-center rounded-full border md:hidden ${
+              isHomepage
+                ? "border-white/40 text-white"
+                : "border-black/15 text-[#111111]"
+            }`}
           >
             <span className="sr-only">
               {menuOpen ? "Close menu" : "Open menu"}
@@ -105,25 +127,27 @@ export default function Navbar() {
           <nav
             id="mobile-navigation"
             aria-label="Mobile navigation"
-            className="border-t border-black/10 py-5 md:hidden"
+            className={`border-t py-5 md:hidden ${
+              isHomepage
+                ? "border-white/20 bg-black/70 px-5 backdrop-blur-md"
+                : "border-black/10 bg-white"
+            }`}
           >
             <div className="flex flex-col">
-              {navigation.map((item) => {
-                const active = pathname === item.href;
-
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={closeMenu}
-                    className={`border-b border-black/10 py-4 text-lg font-medium ${
-                      active ? "text-[#111111]" : "text-[#111111]/75"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className={`border-b py-4 text-lg font-medium ${
+                    isHomepage
+                      ? "border-white/20 text-white"
+                      : "border-black/10 text-[#111111]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
 
               <Link
                 href="/contact"
