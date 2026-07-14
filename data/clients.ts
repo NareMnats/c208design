@@ -11,6 +11,7 @@ export type Client = {
   category: "Education" | "Community" | "Business";
   services: string[];
   featuredMedia: string;
+  mediaFit?: "cover" | "contain";
   projects: ClientProject[];
 };
 
@@ -103,7 +104,7 @@ export const clients: Client[] = [
       "A complete visual identity including a logo, website, and business card.",
     category: "Business",
     services: ["Brand Identity", "Website", "Print Design"],
-    featuredMedia: "/projects/movsys/hero.png",
+    featuredMedia: "/projects/movsys/hero.mp4",
     projects: [
       {
         title: "Brand Identity",

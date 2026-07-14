@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Corben, Geist, Geist_Mono } from "next/font/google";
+import { Corben, Geist_Mono, Roboto_Flex } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const robotoFlex = Roboto_Flex({
+  variable: "--font-roboto-flex",
   subsets: ["latin"],
 });
 
@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 const corben = Corben({
   variable: "--font-corben",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -35,10 +35,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${corben.variable} bg-white text-[#111111] antialiased`}
-      >
+    <html
+      lang="en"
+      className={`${robotoFlex.variable} ${geistMono.variable} ${corben.variable}`}
+    >
+      <body className="bg-white text-[#111111] antialiased">
         <Navbar />
         {children}
         <Footer />
