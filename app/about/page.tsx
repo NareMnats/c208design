@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "@/components/ui/Container";
 
 export const metadata: Metadata = {
@@ -11,47 +12,54 @@ const experience = [
   {
     title: "Founder & Creative Director",
     organization: "C208 Design",
-    detail: "Brand identity, print, environmental, photography, and digital work.",
+    detail: "Brand identity, print design, environmental design, photography, and other digital work.",
+    date: "2026 – present",
   },
   {
-    title: "Design Educator",
-    organization: "Visual communication & creative practice",
-    detail: "Teaching design through practical, audience-centered projects.",
+    title: "CTE Design & Programming Educator",
+    organization: "Montebello Unified School District: Schurr High School",
+    detail: "Teaching design and programming through practical, project-based learning.",
+    date: "2016 – present",
   },
   {
-    title: "Creative Partner",
-    organization: "Schools & community organizations",
-    detail: "Long-term support from early concepts through final production.",
+    title: "Freelance Designer",
+    organization: "Branding & marketing design for small businesses, schools, community organizations, and non-profits.",
+    detail: "From catalog design to environmental graphics, I have worked with clients to create attractive, practical, and effective design solutions.",
+    date: "2011 – 2025",
   },
 ];
 
 const education = [
   {
-    title: "BA Studio Art with emphasis in Graphic Design | 2016",
+    title: "BA Studio Art with emphasis in Graphic Design",
     organization: "California State University, Long Beach",
     detail: "Studio Art: Graphic Design",
+    date: "2016",
   },
   {
-    title: "CTE Credential in Arts, Media, & Entertainment | 2018",
+    title: "CTE Credential in Arts, Media, & Entertainment",
     organization: "Los Angeles County Office of Education",
     detail: "Additional credentials in Information & Communication Technology and Manufacturing & Product Development",
+    date: "2018",
   },
   {
-    title: "MFA in Graphic Design | 2022",
+    title: "MFA in Graphic Design",
     organization: "California State University, Long Beach",
     detail: "Masters program with a focus on typography, and a culminating exhibition.",
+    date: "2022",
   },
 ];
 
 const proficiencies = [
-  "Brand strategy & identity",
+  "Brand design & identity",
   "Print & publication design",
-  "Environmental graphics",
   "Photography & art direction",
   "Web & digital design",
-  "Apparel & production design",
-  "Creative direction",
-  "Curriculum development",
+  "Apparel & product design",
+  "Environmental graphics",
+  "Adobe Creative Suite",
+  "Typography design",
+  "Short video production & editing",
 ];
 
 export default function AboutPage() {
@@ -60,14 +68,15 @@ export default function AboutPage() {
       <section className="bg-[#f2eee9] py-14 sm:py-20 lg:py-28">
         <Container>
           <div className="grid items-center gap-10 md:grid-cols-[1.05fr_0.95fr] md:gap-14 lg:gap-24">
-            <div
-              className="flex aspect-[4/5] min-h-[460px] items-end bg-[#dfe5e2] p-6 sm:min-h-[620px] sm:p-8 lg:min-h-[760px]"
-              role="img"
-              aria-label="Portrait photography placeholder"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/40">
-                Portrait placeholder
-              </p>
+            <div className="relative aspect-[2742/4032] min-h-[460px] overflow-hidden bg-[#dfe5e2] sm:min-h-[620px] lg:min-h-[760px]">
+              <Image
+                src="/AboutMe.png"
+                alt="Portrait of Nare Movsisyan"
+                fill
+                priority
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
 
             <div className="max-w-2xl md:py-10">
@@ -79,15 +88,16 @@ export default function AboutPage() {
               </h1>
               <div className="mt-8 space-y-5 text-base leading-7 text-black/65 sm:text-lg sm:leading-8">
                 <p>
-                  I&apos;m a graphic design educator for the Montebello
-                  Unified School District, designer, & creative partner who believes
-                  that thoughtful design can help people & communities feel seen,
-                  connected, and proud.
+                  I’m a CTE graphic design and game design teacher for the Montebello Unified School District, as well as a designer and creative partner. I believe thoughtful design can help people and communities feel seen, connected, and proud.
                 </p>
                 <p>
-                  Through C208 Design, I work with schools, programs, and
-                  organizations to create identities & materials that are
-                  distinctive, practical, and built for real-world use.
+                  My path in graphic design began in a high school CTE classroom and continued through college and professional practice. Along the way, I developed a wide range of experience through freelance projects spanning jewelry brochures, apparel, salon marketing, and sales materials.
+                </p>
+                <p>
+                  When I became an educator, I saw an opportunity to help my school shine from the inside out. Since then, I’ve worked to strengthen the visual identities of student programs, campus organizations, and the school as a whole.
+                </p>
+                <p>
+                  Through C208 Design, I bring that experience to schools, districts, community organizations, and small businesses—helping them create visual identities that reflect their passion, purpose, and commitment.
                 </p>
               </div>
             </div>

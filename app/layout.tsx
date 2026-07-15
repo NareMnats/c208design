@@ -28,7 +28,11 @@ export const metadata: Metadata = {
   description:
     "Branding, design, photography, and creative services for schools, organizations, and communities.",
   icons: {
-    icon: "/Favicon.svg",
+    icon: {
+      url: "/Favicon.svg?v=20260715",
+      type: "image/svg+xml",
+    },
+    shortcut: "/Favicon.svg?v=20260715",
   },
 };
 
