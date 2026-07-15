@@ -4,8 +4,8 @@ import { clients } from "@/data/clients";
 
 export default function WorkPage() {
   return (
-    <main className="bg-[#f2eee9]">
-      <section className="border-b border-black/10">
+    <main className="bg-white">
+      <section className="border-b border-black/10 bg-[#f2eee9]">
         <Container className="py-16 sm:py-20 lg:py-28">
           <div className="max-w-4xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">

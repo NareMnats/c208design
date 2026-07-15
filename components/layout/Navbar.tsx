@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 
 const navigation = [
@@ -15,8 +15,48 @@ const navigation = [
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [showSolidHomepageNavbar, setShowSolidHomepageNavbar] = useState(false);
 
   const isHomepage = pathname === "/";
+  const useTransparentStyle = isHomepage && !showSolidHomepageNavbar;
+
+  useEffect(() => {
+    if (!isHomepage) {
+      setIsVisible(true);
+      setShowSolidHomepageNavbar(false);
+      return;
+    }
+
+    let previousScrollY = window.scrollY;
+
+    if (previousScrollY > 8) {
+      setIsVisible(false);
+    }
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+      const atTop = currentScrollY <= 8;
+
+      if (atTop) {
+        setIsVisible(true);
+        setShowSolidHomepageNavbar(false);
+      } else if (currentScrollY > previousScrollY + 4) {
+        setIsVisible(false);
+        setMenuOpen(false);
+      } else if (currentScrollY < previousScrollY - 4) {
+        setShowSolidHomepageNavbar(true);
+        setIsVisible(true);
+      }
+
+      previousScrollY = currentScrollY;
+    }
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHomepage]);
 
   function closeMenu() {
     setMenuOpen(false);
@@ -24,12 +64,16 @@ export default function Navbar() {
 
   return (
     <header
-  className={`z-50 w-full transition-colors ${
-    isHomepage
-      ? "absolute left-0 top-0 bg-transparent text-white"
-      : "sticky top-0 border-b border-black/10 bg-[#f2eee9]/95 text-[#111111] backdrop-blur-md"
-  }`}
->
+      className={`z-50 w-full transition-[opacity,background-color,border-color] duration-500 ease-out ${
+        isHomepage
+          ? `fixed left-0 top-0 ${isVisible ? "opacity-100" : "pointer-events-none opacity-0"}`
+          : "sticky top-0"
+      } ${
+        useTransparentStyle
+          ? "border-b border-transparent bg-transparent text-white"
+          : "border-b border-black/10 bg-[#f2eee9]/95 text-[#111111] backdrop-blur-md"
+      }`}
+    >
       <Container>
         <div className="flex h-20 items-center justify-between md:h-24">
           <Link
@@ -40,7 +84,7 @@ export default function Navbar() {
           >
             <Image
   src={
-    isHomepage
+    useTransparentStyle
       ? "/c208-logo-whitecyan.png"
       : "/c208-logo-blackcyan.png"
   }
@@ -64,7 +108,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={`relative py-3 text-sm font-medium transition-opacity hover:opacity-60 ${
-                    isHomepage ? "text-white" : "text-[#111111]"
+                    useTransparentStyle ? "text-white" : "text-[#111111]"
                   }`}
                 >
                   {item.label}
@@ -72,7 +116,7 @@ export default function Navbar() {
                   {active && (
                     <span
                       className={`absolute inset-x-0 bottom-1 h-px ${
-                        isHomepage ? "bg-white" : "bg-[#111111]"
+                        useTransparentStyle ? "bg-white" : "bg-[#111111]"
                       }`}
                     />
                   )}
@@ -83,7 +127,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               className={`rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
-                isHomepage
+                useTransparentStyle
                   ? "border border-white/50 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
                   : "bg-[#a2d9d6] text-[#111111] hover:bg-[#92cbc7]"
               }`}
@@ -99,7 +143,7 @@ export default function Navbar() {
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             onClick={() => setMenuOpen((current) => !current)}
             className={`flex h-11 w-11 items-center justify-center rounded-full border md:hidden ${
-              isHomepage
+              useTransparentStyle
                 ? "border-white/40 text-white"
                 : "border-black/15 text-[#111111]"
             }`}
@@ -128,7 +172,7 @@ export default function Navbar() {
             id="mobile-navigation"
             aria-label="Mobile navigation"
             className={`border-t py-5 md:hidden ${
-              isHomepage
+              useTransparentStyle
                 ? "border-white/20 bg-black/70 px-5 backdrop-blur-md"
                 : "border-black/10 bg-[#f2eee9]"
             }`}
@@ -140,7 +184,7 @@ export default function Navbar() {
                   href={item.href}
                   onClick={closeMenu}
                   className={`border-b py-4 text-lg font-medium ${
-                    isHomepage
+                    useTransparentStyle
                       ? "border-white/20 text-white"
                       : "border-black/10 text-[#111111]"
                   }`}

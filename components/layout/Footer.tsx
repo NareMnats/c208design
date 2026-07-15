@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 
@@ -18,9 +19,16 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="text-xl font-semibold tracking-[-0.025em]"
+              aria-label="C208 Design homepage"
+              className="inline-block"
             >
-              C208 Design
+              <Image
+                src="/c208-logo-whitecyan.png"
+                alt="C208 Design"
+                width={1140}
+                height={881}
+                className="h-auto w-[86px] sm:w-[96px]"
+              />
             </Link>
 
             <p className="mt-3 max-w-md text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
