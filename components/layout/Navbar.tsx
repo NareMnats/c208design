@@ -142,10 +142,10 @@ export default function Navbar() {
             aria-controls="mobile-navigation"
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
             onClick={() => setMenuOpen((current) => !current)}
-            className={`flex h-11 w-11 items-center justify-center rounded-full border md:hidden ${
+            className={`flex h-11 w-11 items-center justify-center md:hidden ${
               useTransparentStyle
-                ? "border-white/40 text-white"
-                : "border-black/15 text-[#111111]"
+                ? "text-white"
+                : "text-[#111111]"
             }`}
           >
             <span className="sr-only">
