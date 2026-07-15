@@ -22,7 +22,7 @@ export default function EducatorSection() {
               Why C208
             </p>
 
-            <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#111111] sm:text-5xl lg:text-6xl">
+            <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#6db2ab] sm:text-5xl lg:text-6xl">
               Built by an educator.
             </h2>
 

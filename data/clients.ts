@@ -63,7 +63,7 @@ export const clients: Client[] = [
       challenge:
         "Many audiences share the same campus, but each program has its own voice. The challenge was to create distinction without fragmentation: work that could feel energetic, credible, and student-centered while strengthening one shared identity.",
       approach:
-        "We built the system from the school outward. Strong Spartan cues, a focused green palette, clear typography, and adaptable graphic elements create continuity across everything from pathway identities to murals, maps, posters, and pins.",
+        "C208 Design built the system from the school outward. Strong Spartan cues, a focused green palette, clear typography, and adaptable graphic elements create continuity across everything from pathway identities to murals, maps, posters, and pins.",
       outcome:
         "The result is a growing identity system rather than a one-time campaign—one that helps students recognize their programs, gives staff practical tools, and makes school pride visible across campus.",
       partnership: "Ongoing creative partnership",

@@ -35,7 +35,7 @@ export default function ServicesPreview() {
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="max-w-md">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
-              What we do
+              What C208 Design does
             </p>
 
             <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#111111] sm:text-5xl">
@@ -65,7 +65,7 @@ export default function ServicesPreview() {
                   {service.number}
                 </p>
 
-                <h3 className="text-xl font-semibold tracking-[-0.025em] text-[#111111] sm:text-2xl">
+                <h3 className="text-xl font-semibold tracking-[-0.025em] text-[#6db2ab] sm:text-2xl">
                   {service.title}
                 </h3>
 
