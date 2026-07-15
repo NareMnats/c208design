@@ -27,19 +27,19 @@ const experience = [
 
 const education = [
   {
-    title: "Degree / Program",
-    organization: "Institution name",
-    detail: "Add field of study, location, and graduation year.",
+    title: "BA Studio Art with emphasis in Graphic Design | 2016",
+    organization: "California State University, Long Beach",
+    detail: "Studio Art: Graphic Design",
   },
   {
-    title: "Credential / Certification",
-    organization: "Issuing organization",
-    detail: "Add relevant teaching or design credentials.",
+    title: "CTE Credential in Arts, Media, & Entertainment | 2018",
+    organization: "Los Angeles County Office of Education",
+    detail: "Additional credentials in Information & Communication Technology and Manufacturing & Product Development",
   },
   {
-    title: "Continuing Education",
-    organization: "Workshops & professional learning",
-    detail: "Ongoing study in design, technology, and education.",
+    title: "MFA in Graphic Design | 2022",
+    organization: "California State University, Long Beach",
+    detail: "Masters program with a focus on typography, and a culminating exhibition.",
   },
 ];
 
