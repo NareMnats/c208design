@@ -7,11 +7,15 @@ export type ClientProject = {
     alt: string;
     width: number;
     height: number;
+    fullWidth?: boolean;
   }>;
   plannedAssets?: Array<{
     label: string;
     note: string;
   }>;
+  plannedAssetsBeforeLastImage?: boolean;
+  galleryColumns?: 2 | 3;
+  galleryEqualHeight?: boolean;
 };
 
 export type CaseStudy = {
@@ -80,16 +84,10 @@ export const clients: Client[] = [
             height: 6250,
           },
           {
-            src: "/projects/schurr/PVP_Swatches.png",
-            alt: "Project-based Visual Programming Pathway color palette",
-            width: 6250,
-            height: 6250,
-          },
-          {
-            src: "/projects/schurr/PVP_Typefaces.png",
-            alt: "Project-based Visual Programming Pathway type system",
-            width: 6250,
-            height: 3125,
+            src: "/projects/schurr/PVP_Identity.png",
+            alt: "Project-based Visual Programming Pathway color and typography system",
+            width: 13542,
+            height: 2084,
           },
         ],
       },
@@ -106,16 +104,10 @@ export const clients: Client[] = [
             height: 6250,
           },
           {
-            src: "/projects/schurr/GA_Swatches.png",
-            alt: "Schurr Gaming Association color palette",
-            width: 6250,
-            height: 6250,
-          },
-          {
-            src: "/projects/schurr/GA_Typefaces.png",
-            alt: "Schurr Gaming Association type system",
-            width: 6250,
-            height: 3125,
+            src: "/projects/schurr/GA_Identity.png",
+            alt: "Schurr Gaming Association color and typography system",
+            width: 13542,
+            height: 2084,
           },
         ],
         plannedAssets: [
@@ -128,6 +120,7 @@ export const clients: Client[] = [
             note: "Reserved for upcoming pin photography",
           },
         ],
+        plannedAssetsBeforeLastImage: true,
       },
       {
         title: "Engineering & Design Pathway Branding",
@@ -184,6 +177,8 @@ export const clients: Client[] = [
       {
         title: "Campus Mural",
         slug: "campus-mural",
+        galleryColumns: 3,
+        galleryEqualHeight: true,
         description:
           "A large-scale environmental concept that turns a prominent campus wall into a visible expression of Spartan identity, values, and pride.",
         images: [
@@ -204,12 +199,14 @@ export const clients: Client[] = [
             alt: "Wide detail view of the Schurr campus mural",
             width: 6250,
             height: 3125,
+            fullWidth: false,
           },
           {
             src: "/projects/schurr/Mural_Mockups.png",
             alt: "Schurr campus mural wall mockups",
             width: 6250,
             height: 6250,
+            fullWidth: false,
           },
         ],
       },

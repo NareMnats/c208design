@@ -43,7 +43,23 @@ function ProjectArtwork({
     const plannedAssets = project.plannedAssets ?? [];
     const totalAssets = project.images.length + plannedAssets.length;
     const firstImageIsWide =
+      project.images[0].fullWidth ??
       project.images[0].width / project.images[0].height >= 2;
+    const imageItems = project.images.map((image) => ({
+      type: "image" as const,
+      image,
+    }));
+    const plannedItems = plannedAssets.map((asset) => ({
+      type: "planned" as const,
+      asset,
+    }));
+    const galleryItems = project.plannedAssetsBeforeLastImage
+      ? [
+          ...imageItems.slice(0, -1),
+          ...plannedItems,
+          ...imageItems.slice(-1),
+        ]
+      : [...imageItems, ...plannedItems];
 
     return (
       <article className="border-t border-black/12 pt-7 sm:pt-9">
@@ -61,7 +77,9 @@ function ProjectArtwork({
 
         <div
           className={`grid items-start gap-4 sm:gap-6 ${
-            firstImageIsWide && totalAssets >= 4
+            project.galleryColumns === 2
+              ? "md:grid-cols-2"
+              : firstImageIsWide && totalAssets >= 4
               ? "md:grid-cols-2 lg:grid-cols-3"
               : firstImageIsWide
                 ? "md:grid-cols-2"
@@ -72,59 +90,71 @@ function ProjectArtwork({
                   : ""
           }`}
         >
-          {project.images.map((image, imageIndex) => (
-            <figure
-              key={image.src}
-              className={`overflow-hidden bg-white ${
-                firstImageIsWide && imageIndex === 0
-                  ? totalAssets >= 4
-                    ? "md:col-span-2 lg:col-span-3"
-                    : "md:col-span-2"
-                  : ""
-              }`}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                sizes={
-                  firstImageIsWide && imageIndex === 0
-                    ? "(max-width: 1023px) 100vw, 1400px"
-                    : totalAssets >= 3
-                    ? "(max-width: 767px) 100vw, 33vw"
-                    : totalAssets > 1
-                      ? "(max-width: 767px) 100vw, 50vw"
-                    : "(max-width: 1023px) 100vw, 700px"
-                }
-                className="h-auto w-full"
-              />
-            </figure>
-          ))}
+          {galleryItems.map((item) => {
+            if (item.type === "planned") {
+              return (
+                <div
+                  key={item.asset.label}
+                  className="flex aspect-square min-h-64 flex-col justify-between border border-dashed border-black/25 bg-white p-6 sm:p-8"
+                >
+                  <div
+                    className="h-3 w-3 rounded-full"
+                    style={{ backgroundColor: accent }}
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/35">
+                      Image slot
+                    </p>
+                    <p className="mt-3 text-xl tracking-[-0.02em] sm:text-2xl">
+                      {item.asset.label}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-black/45">
+                      {item.asset.note}
+                    </p>
+                  </div>
+                </div>
+              );
+            }
 
-          {plannedAssets.map((asset) => (
-            <div
-              key={asset.label}
-              className="flex aspect-square min-h-64 flex-col justify-between border border-dashed border-black/25 bg-white p-6 sm:p-8"
-            >
-              <div
-                className="h-3 w-3 rounded-full"
-                style={{ backgroundColor: accent }}
-                aria-hidden="true"
-              />
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/35">
-                  Image slot
-                </p>
-                <p className="mt-3 text-xl tracking-[-0.02em] sm:text-2xl">
-                  {asset.label}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-black/45">
-                  {asset.note}
-                </p>
-              </div>
-            </div>
-          ))}
+            const image = item.image;
+            const isFullWidth =
+              image.fullWidth ?? image.width / image.height >= 2;
+
+            return (
+              <figure
+                key={image.src}
+                className={`overflow-hidden bg-white ${
+                  isFullWidth
+                    ? totalAssets >= 4 && project.galleryColumns !== 2
+                      ? "md:col-span-2 lg:col-span-3"
+                      : "md:col-span-2"
+                    : ""
+                } ${project.galleryEqualHeight && !isFullWidth ? "aspect-[2/1]" : ""}`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  sizes={
+                    isFullWidth
+                      ? "(max-width: 1023px) 100vw, 1400px"
+                      : totalAssets >= 3
+                        ? "(max-width: 767px) 100vw, 33vw"
+                        : totalAssets > 1
+                          ? "(max-width: 767px) 100vw, 50vw"
+                          : "(max-width: 1023px) 100vw, 700px"
+                  }
+                  className={
+                    project.galleryEqualHeight && !isFullWidth
+                      ? "h-full w-full object-cover"
+                      : "h-auto w-full"
+                  }
+                />
+              </figure>
+            );
+          })}
         </div>
       </article>
     );
