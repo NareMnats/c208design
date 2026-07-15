@@ -140,11 +140,11 @@ export const clients: Client[] = [
             width: 2000,
             height: 2000,
           },
-        ],
-        plannedAssets: [
           {
-            label: "ED shirt designs",
-            note: "Reserved for upcoming apparel artwork",
+            src: "/projects/schurr/Eng_Shirts.png",
+            alt: "Engineering and Design Pathway shirt designs",
+            width: 1254,
+            height: 1254,
           },
         ],
       },
