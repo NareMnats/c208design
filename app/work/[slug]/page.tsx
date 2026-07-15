@@ -209,7 +209,7 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
 
   return (
     <main className="bg-white text-[#111111]">
-      <section className="border-b border-black/10">
+      <section className="border-b border-black/10 bg-[#f2eee9]">
         <Container className="py-7 sm:py-10 lg:py-14">
           <Link
             href="/work"
@@ -236,7 +236,7 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
         </Container>
       </section>
 
-      <section className="pb-7 pt-14 sm:pb-10 sm:pt-20 lg:pb-12 lg:pt-24">
+      <section className="bg-[#f2eee9] pb-10 pt-14 sm:pb-15 sm:pt-20 lg:pb-20 lg:pt-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1.5fr_0.5fr] lg:gap-20">
             <div>
@@ -272,14 +272,14 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
           </div>
 
           {caseStudy ? (
-            <h2 className="mt-16 max-w-6xl text-2xl leading-[1.35] tracking-[-0.025em] text-[#acdcd7] sm:mt-24 sm:text-3xl lg:mt-28 lg:text-4xl">
+            <h2 className="mt-16 max-w-6xl text-2xl leading-[1.35] tracking-[-0.025em] text-[#6db2ab] sm:mt-24 sm:text-3xl lg:mt-28 lg:text-4xl">
               {caseStudy.approach}
             </h2>
           ) : null}
         </Container>
       </section>
 
-      <section className="pb-16 pt-3 sm:pb-24 sm:pt-5 lg:pb-32 lg:pt-8">
+      <section className="pb-16 sm:pb-24 lg:pb-32">
         <Container>
           <div className="space-y-20 sm:space-y-28 lg:space-y-36">
             {client.projects.map((project, index) => (
@@ -304,7 +304,7 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
                 </p>
                 <Link
                   href="/contact"
-                  className="mt-10 inline-flex min-h-12 items-center gap-4 rounded-full bg-[#acdcd7] px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#9fcfc9]"
+                  className="mt-10 inline-flex min-h-12 items-center gap-4 rounded-full bg-[#a2d9d6] px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#92cbc7]"
                 >
                   Start a project
                   <span aria-hidden="true">→</span>

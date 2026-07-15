@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="mt-8 flex flex-col gap-3 min-[430px]:flex-row sm:mt-10 sm:gap-4">
               <Link
                 href="/work"
-                className="flex min-h-12 items-center justify-center rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#111111] transition-colors hover:bg-white/85"
+                className="flex min-h-12 items-center justify-center rounded-full bg-[#c3d8d6] px-7 py-3.5 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#a2d9d6]"
               >
                 View work
               </Link>

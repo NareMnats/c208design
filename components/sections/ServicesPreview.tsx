@@ -30,7 +30,7 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="border-y border-black/10 bg-[#f7f7f5] py-16 sm:py-20 lg:py-28">
+    <section className="border-y border-black/10 bg-[#f2eee9] py-16 sm:py-20 lg:py-28">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="max-w-md">
@@ -49,7 +49,7 @@ export default function ServicesPreview() {
 
             <Link
               href="/services"
-              className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-white px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-black hover:bg-black/[0.03]"
+              className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-[#c3d8d6] px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-black hover:bg-[#a2d9d6]"
             >
               Explore services
             </Link>

@@ -27,7 +27,7 @@ export default function Navbar() {
   className={`z-50 w-full transition-colors ${
     isHomepage
       ? "absolute left-0 top-0 bg-transparent text-white"
-      : "sticky top-0 border-b border-black/10 bg-white/95 text-[#111111] backdrop-blur-md"
+      : "sticky top-0 border-b border-black/10 bg-[#f2eee9]/95 text-[#111111] backdrop-blur-md"
   }`}
 >
       <Container>
@@ -85,7 +85,7 @@ export default function Navbar() {
               className={`rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
                 isHomepage
                   ? "border border-white/50 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
-                  : "bg-[#acdcd7] text-[#111111] hover:bg-[#9fcfc9]"
+                  : "bg-[#a2d9d6] text-[#111111] hover:bg-[#92cbc7]"
               }`}
             >
               Contact
@@ -130,7 +130,7 @@ export default function Navbar() {
             className={`border-t py-5 md:hidden ${
               isHomepage
                 ? "border-white/20 bg-black/70 px-5 backdrop-blur-md"
-                : "border-black/10 bg-white"
+                : "border-black/10 bg-[#f2eee9]"
             }`}
           >
             <div className="flex flex-col">
@@ -152,7 +152,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={closeMenu}
-                className="mt-5 flex min-h-12 items-center justify-center rounded-full bg-[#acdcd7] px-6 py-3 text-base font-semibold text-[#111111]"
+                className="mt-5 flex min-h-12 items-center justify-center rounded-full bg-[#a2d9d6] px-6 py-3 text-base font-semibold text-[#111111] transition-colors hover:bg-[#92cbc7]"
               >
                 Contact
               </Link>

@@ -24,7 +24,7 @@ export default function ContactCTA() {
 
             <Link
               href="/contact"
-              className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#acdcd7] px-7 py-3.5 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#9fcfc9] sm:w-auto"
+              className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[#a2d9d6] px-7 py-3.5 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#92cbc7] sm:w-auto"
             >
               Get in touch
             </Link>

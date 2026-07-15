@@ -39,7 +39,7 @@ export default function RootLayout({
       lang="en"
       className={`${robotoFlex.variable} ${geistMono.variable} ${corben.variable}`}
     >
-      <body className="bg-white text-[#111111] antialiased">
+      <body className="bg-[#f2eee9] text-[#111111] antialiased">
         <Navbar />
         {children}
         <Footer />

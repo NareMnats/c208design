@@ -3,7 +3,7 @@ import Container from "@/components/ui/Container";
 
 export default function EducatorSection() {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-28">
+    <section className="bg-[#f2eee9] py-16 sm:py-20 lg:py-28">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] bg-[#f2f5f4] sm:min-h-[460px] sm:rounded-[2rem] lg:min-h-[560px]">
@@ -47,7 +47,7 @@ export default function EducatorSection() {
 
             <Link
               href="/about"
-              className="mt-9 inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-white px-7 py-3.5 text-sm font-semibold text-[#111111] transition-colors hover:border-black hover:bg-black/[0.03]"
+              className="mt-9 inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-[#c3d8d6] px-7 py-3.5 text-sm font-semibold text-[#111111] transition-colors hover:border-black hover:bg-[#a2d9d6]"
             >
               About C208
             </Link>
