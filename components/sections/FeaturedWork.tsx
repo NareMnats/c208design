@@ -190,8 +190,6 @@ export default function FeaturedWork() {
                   fit={client.mediaFit ?? "cover"}
                   position="center"
                 />
-
-                <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
               </Link>
 
               <div className="mt-5">

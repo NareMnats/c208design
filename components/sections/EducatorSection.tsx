@@ -19,7 +19,7 @@ export default function EducatorSection() {
 
           <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
-              Why C208
+              Why C208?
             </p>
 
             <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#6db2ab] sm:text-5xl lg:text-6xl">
@@ -27,15 +27,14 @@ export default function EducatorSection() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-black/70 sm:text-xl sm:leading-9">
-              C208 Design brings firsthand experience from inside schools to
-              every project.
+              I bring firsthand experience from inside schools to every project.
             </p>
 
             <div className="mt-7 space-y-5 text-base leading-7 text-black/65 sm:text-lg sm:leading-8">
               <p>
                 That means understanding how administrators, teachers,
-                students, families, and communities interact with a school&apos;s
-                visual identity.
+                students, families, & communities interact with a school's
+                or organization's visual identity.
               </p>
 
               <p>
@@ -49,7 +48,7 @@ export default function EducatorSection() {
               href="/about"
               className="mt-9 inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-[#c3d8d6] px-7 py-3.5 text-sm font-semibold text-[#111111] transition-colors hover:border-black hover:bg-[#a2d9d6]"
             >
-              About C208
+              About C208 Design
             </Link>
           </div>
         </div>
