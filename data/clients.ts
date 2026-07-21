@@ -263,16 +263,56 @@ export const clients: Client[] = [
   {
     slug: "masca",
     client: "Montebello–Ashiya Sister City Association",
-    tagline: "Celebrating international community through thoughtful design.",
+    tagline:
+      "MASCA brings Montebello, California, and Ashiya, Japan, together through cultural exchange, youth programs, and a lasting sister-city partnership.",
     description:
-      "Website redesign, youth branding, and promotional materials for the Montebello–Ashiya Sister City Association.",
+      "A fully custom WordPress website designed and developed to give the Montebello–Ashiya Sister City Association a welcoming, flexible digital home.",
     category: "Community",
     services: ["Brand Identity", "Website", "Print Design"],
     featuredMedia: "/projects/masca/hero.mp4",
+    caseStudy: {
+      eyebrow: "A digital home for cultural exchange",
+      introduction:
+        "MASCA needed a website that could clearly share its mission, programs, history, and opportunities to participate with families and community members in Montebello.",
+      challenge:
+        "The existing digital experience needed a rethink. The challenge was to organize a wide range of information into an approachable site while reflecting the warmth & longevity of the Montebello–Ashiya relationship.",
+      approach:
+        "C208 Design redesigned the MASCA website in its entirety, then designed and developed a custom WordPress theme from the ground up rather than using a prebuilt template.",
+      outcome:
+        "The result is a distinctive, maintainable website that gives MASCA a voice, makes its programs easier to explore, and provides a flexible foundation for future stories and events.",
+      partnership: "Website strategy, design, and development",
+      accent: "#c94f62",
+      accentSoft: "#f5e2e5",
+    },
     projects: [
       {
         title: "Website Redesign",
         slug: "website-redesign",
+        description:
+          "A complete redesign and custom WordPress build, including a bespoke theme designed from scratch to support MASCA’s content, programs, and community storytelling without relying on an existing template.",
+        images: [
+          {
+            src: "/projects/masca/Website.mp4",
+            alt: "A walkthrough of the custom-designed MASCA website",
+            width: 1920,
+            height: 1080,
+            fullWidth: true,
+          },
+          {
+            src: "/projects/masca/mobile-frames.mp4",
+            alt: "The MASCA website displayed across mobile device frames",
+            width: 1920,
+            height: 1080,
+            fullWidth: true,
+          },
+          {
+            src: "/projects/masca/desktop-frames.mp4",
+            alt: "The MASCA website displayed across desktop screen frames",
+            width: 1920,
+            height: 1080,
+            fullWidth: true,
+          },
+        ],
       },
       {
         title: "Montebello Youth Identity",

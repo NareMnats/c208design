@@ -120,6 +120,7 @@ function ProjectArtwork({
             const image = item.image;
             const isFullWidth =
               image.fullWidth ?? image.width / image.height >= 2;
+            const isVideo = image.src.toLowerCase().endsWith(".mp4");
 
             return (
               <figure
@@ -132,26 +133,40 @@ function ProjectArtwork({
                     : ""
                 } ${project.galleryEqualHeight && !isFullWidth ? "aspect-[2/1]" : ""}`}
               >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  sizes={
-                    isFullWidth
-                      ? "(max-width: 1023px) 100vw, 1400px"
-                      : totalAssets >= 3
-                        ? "(max-width: 767px) 100vw, 33vw"
-                        : totalAssets > 1
-                          ? "(max-width: 767px) 100vw, 50vw"
-                          : "(max-width: 1023px) 100vw, 700px"
-                  }
-                  className={
-                    project.galleryEqualHeight && !isFullWidth
-                      ? "h-full w-full object-cover"
-                      : "h-auto w-full"
-                  }
-                />
+                {isVideo ? (
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={image.alt}
+                    className="h-auto w-full"
+                  >
+                    <source src={image.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    sizes={
+                      isFullWidth
+                        ? "(max-width: 1023px) 100vw, 1400px"
+                        : totalAssets >= 3
+                          ? "(max-width: 767px) 100vw, 33vw"
+                          : totalAssets > 1
+                            ? "(max-width: 767px) 100vw, 50vw"
+                            : "(max-width: 1023px) 100vw, 700px"
+                    }
+                    className={
+                      project.galleryEqualHeight && !isFullWidth
+                        ? "h-full w-full object-cover"
+                        : "h-auto w-full"
+                    }
+                  />
+                )}
               </figure>
             );
           })}
