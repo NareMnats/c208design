@@ -22,10 +22,6 @@ export default function Navbar() {
   const useTransparentStyle = isHomepage && !showSolidHomepageNavbar;
 
   useEffect(() => {
-    if (!isHomepage) {
-      return;
-    }
-
     let previousScrollY = window.scrollY;
 
     function handleScroll() {
@@ -34,12 +30,16 @@ export default function Navbar() {
 
       if (atTop) {
         setIsVisible(true);
-        setShowSolidHomepageNavbar(false);
+        if (isHomepage) {
+          setShowSolidHomepageNavbar(false);
+        }
       } else if (currentScrollY > previousScrollY + 4) {
         setIsVisible(false);
         setMenuOpen(false);
       } else if (currentScrollY < previousScrollY - 4) {
-        setShowSolidHomepageNavbar(true);
+        if (isHomepage) {
+          setShowSolidHomepageNavbar(true);
+        }
         setIsVisible(true);
       }
 
@@ -61,14 +61,16 @@ export default function Navbar() {
 
   return (
     <header
-      className={`z-50 w-full transition-[opacity,background-color,border-color] duration-500 ease-out ${
-        isHomepage
-          ? `fixed left-0 top-0 ${isVisible ? "opacity-100" : "pointer-events-none opacity-0"}`
-          : "sticky top-0"
+      className={`z-50 w-full will-change-transform transition-all duration-500 ease-in-out ${
+        isHomepage ? "fixed left-0 top-0" : "sticky top-0"
+      } ${
+        isVisible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none -translate-y-4 opacity-0"
       } ${
         useTransparentStyle
           ? "border-b border-transparent bg-transparent text-white"
-          : "border-b border-black/10 bg-[#f2eee9]/95 text-[#111111] backdrop-blur-md"
+          : "border-b border-black/10 bg-white/45 text-[#111111] backdrop-blur-xl"
       }`}
     >
       <Container>
@@ -171,7 +173,7 @@ export default function Navbar() {
             className={`border-t py-5 md:hidden ${
               useTransparentStyle
                 ? "border-white/20 bg-black/70 px-5 backdrop-blur-md"
-                : "border-black/10 bg-[#f2eee9]"
+                : "border-black/10 bg-white/55 backdrop-blur-xl"
             }`}
           >
             <div className="flex flex-col">

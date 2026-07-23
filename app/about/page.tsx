@@ -149,6 +149,71 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <section className="border-t border-black/10 bg-[#f2eee9] py-16 sm:py-24 lg:py-32">
+        <Container>
+          <div className="max-w-[70ch]">
+            <h2 className="display-heading">My Ethos</h2>
+
+            <div className="mt-8 space-y-6 text-base leading-7 text-black/65 sm:mt-10 sm:text-lg sm:leading-8">
+              <p>
+                Graphic design and advertising are not careers that can be
+                simplified down to “let’s make pretty work”—they are careers
+                that shape how people see the world. I make it a point at the
+                start of each academic year to explain the value and
+                significance of this profession to my students. Every single
+                poster, flyer, website, sign, logo, billboard, decal, down to
+                those annoying adverts that we all receive in the mail… all of
+                these contribute to the visual landscape that we share. The
+                responsibility of the designer deserves thoughtful
+                consideration.
+              </p>
+
+              <p>
+                Throughout my career, I have realized that I find the greatest
+                fulfillment in designing for my fellow educators, for my school,
+                and for nonprofit organizations that help strengthen their
+                communities and provide new experiences for the people that they
+                serve. Instead of creating work that perpetuates consumerism, I
+                find my joy in designing things that bring us closer together.
+                My goal is to leave a positive mark by helping students discover
+                opportunities that may shape their academic paths, supporting
+                educators who give their all to their students, celebrating the
+                diversity of our communities through their programs, and making
+                information more accessible through thoughtful design.
+              </p>
+
+              <p>
+                This perspective is not new. Since first learning about the{" "}
+                <em>First Things First Manifesto</em> while taking a graphic
+                design course during my undergraduate studies at California
+                State University, Long Beach, it has held a permanent place in
+                my philosophy. It is a document that challenges designers to
+                pause and consider how their skills are serving society beyond
+                consumerism.
+              </p>
+
+              <p>
+                Design should do more than “sell such things as: cat food,
+                stomach powders, detergent, hair restorer, striped toothpaste,
+                aftershave lotion, beforeshave lotion, slimming diets, fattening
+                diets, deodorants, fizzy water, cigarettes, roll-ons, pull-ons,
+                and slip-ons”—it should be a means to inform, educate, and
+                connect people.
+              </p>
+            </div>
+
+            <a
+              href="http://www.designishistory.com/1960/first-things-first/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-10 inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-[#c3d8d6] px-7 py-3.5 text-sm font-semibold text-[#111111] transition-colors hover:border-black hover:bg-[#a2d9d6] sm:mt-12"
+            >
+              Read the First Things First Manifesto
+            </a>
+          </div>
+        </Container>
+      </section>
+
       <section
         className="flex min-h-[680px] w-full items-end bg-[#d9dfdc] p-6 sm:min-h-[820px] sm:p-10 lg:h-[1000px] lg:p-12"
         role="img"

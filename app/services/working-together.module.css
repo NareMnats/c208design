@@ -5,7 +5,6 @@
   --aqua-light: #e8f6f4;
   --cream: #f5f0e7;
   --cream-light: #fbf8f2;
-  --blue: #dce8f1;
   --line: rgba(23, 37, 31, 0.16);
   --white: #ffffff;
   color: var(--ink);
@@ -345,7 +344,7 @@
 }
 
 .privacySection {
-  background: var(--blue);
+  background: var(--cream);
 }
 
 .privacyStatement {
