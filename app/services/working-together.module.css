@@ -1,0 +1,570 @@
+.page {
+  --ink: #17251f;
+  --muted: #58625d;
+  --aqua: #acdcd7;
+  --aqua-light: #e8f6f4;
+  --cream: #f5f0e7;
+  --cream-light: #fbf8f2;
+  --blue: #dce8f1;
+  --line: rgba(23, 37, 31, 0.16);
+  --white: #ffffff;
+  color: var(--ink);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.shell {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero h1,
+.section h2,
+.ctaSection h2 {
+  margin: 0;
+  font-family: var(--font-heading, "Corben", Georgia, serif);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.hero h1 {
+  max-width: 760px;
+  font-size: clamp(4.5rem, 10vw, 9rem);
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.heroCopy {
+  max-width: 630px;
+  margin: 36px 0 0;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.heroShape {
+  position: absolute;
+  z-index: -1;
+  width: min(45vw, 620px);
+  aspect-ratio: 1;
+  right: -8vw;
+  bottom: -28%;
+  border: 1px solid rgba(23, 37, 31, 0.08);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, transparent 0 31%, rgba(172, 220, 215, 0.35) 31.5% 32.5%, transparent 33%),
+    radial-gradient(circle at center, transparent 0 56%, rgba(23, 37, 31, 0.08) 56.5% 57.5%, transparent 58%);
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.sectionIntro,
+.sectionIntroCompact {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+
+.sectionIntro .eyebrow,
+.sectionIntroCompact .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: -40px;
+}
+
+.section h2,
+.ctaSection h2 {
+  font-size: clamp(2.7rem, 5vw, 5rem);
+}
+
+.sectionIntro > p:last-child,
+.districtHeading > p,
+.privacyStatement > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.audienceSection {
+  background: var(--cream-light);
+}
+
+.audienceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.audienceCard {
+  min-height: 190px;
+  padding: 28px;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.audienceCard:hover {
+  transform: translateY(-4px);
+  background: var(--white);
+}
+
+.audienceCard span {
+  max-width: 220px;
+  font-family: var(--font-heading, "Corben", Georgia, serif);
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.15;
+}
+
+.audienceCardWide {
+  grid-column: span 2;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: var(--aqua-light);
+}
+
+.audienceCardWide p {
+  max-width: 520px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.commitmentSection {
+  background: var(--white);
+}
+
+.sectionIntroCompact {
+  grid-template-columns: 1fr;
+  max-width: 850px;
+}
+
+.commitmentGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.commitmentCard {
+  position: relative;
+  min-height: 340px;
+  padding: 30px;
+  border-right: 1px solid var(--line);
+}
+
+.commitmentCard:last-child {
+  border-right: 0;
+}
+
+.cardIndex {
+  display: block;
+  margin-bottom: 90px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+.commitmentCard h3,
+.subsection h3,
+.paymentPanel h3,
+.privacyCards h3 {
+  margin: 0;
+  font-family: var(--font-heading, "Corben", Georgia, serif);
+  font-weight: 400;
+}
+
+.commitmentCard h3 {
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.commitmentCard p,
+.insuranceCard p,
+.steps p,
+.paymentPanel p,
+.privacyCards p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.districtSection {
+  background: var(--aqua-light);
+}
+
+.districtHeading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 72px;
+  align-items: end;
+  padding-bottom: 72px;
+  border-bottom: 1px solid var(--line);
+}
+
+.subsection {
+  padding: 76px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.subsectionHeading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 36px;
+}
+
+.subsectionHeading h3,
+.paymentPanel h3 {
+  font-size: clamp(2rem, 3.5vw, 3.3rem);
+  line-height: 1.05;
+}
+
+.subsectionHeading p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.insuranceGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.insuranceCard {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 22px;
+  padding: 24px 26px;
+  border: 1px solid rgba(23, 37, 31, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.insuranceMarker {
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 6px rgba(172, 220, 215, 0.72);
+}
+
+.insuranceCard h4,
+.steps h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.note {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.steps li {
+  min-height: 250px;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+}
+
+.steps li:last-child {
+  border-right: 0;
+}
+
+.stepNumber {
+  display: block;
+  margin-bottom: 62px;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.paymentPanel {
+  margin-top: 76px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  border-radius: 26px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.paymentPanel p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.paymentChips {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 12px;
+}
+
+.paymentChips span {
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.privacySection {
+  background: var(--blue);
+}
+
+.privacyStatement {
+  max-width: 880px;
+  margin-bottom: 58px;
+}
+
+.privacyStatement h2 {
+  margin-bottom: 28px;
+}
+
+.privacyCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.privacyCards article {
+  min-height: 280px;
+  padding: 30px;
+  border: 1px solid rgba(23, 37, 31, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.privacyCards h3 {
+  font-size: 1.5rem;
+}
+
+.ctaSection {
+  padding: 36px 0 72px;
+  background: var(--white);
+}
+
+.ctaPanel {
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 56px;
+  align-items: end;
+  border-radius: 28px;
+  background: var(--cream);
+}
+
+.ctaPanel p:last-child {
+  max-width: 650px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-width: 180px;
+  padding: 17px 20px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.ctaButton:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+@media (max-width: 960px) {
+  .sectionIntro,
+  .districtHeading,
+  .subsectionHeading,
+  .paymentPanel,
+  .ctaPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionIntro .eyebrow,
+  .sectionIntroCompact .eyebrow {
+    margin-bottom: -30px;
+  }
+
+  .audienceGrid,
+  .privacyCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .commitmentGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .commitmentCard:nth-child(2) {
+    border-right: 0;
+  }
+
+  .commitmentCard:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .steps li {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 18px;
+    border-right: 0;
+  }
+
+  .stepNumber {
+    margin: 0;
+  }
+
+  .paymentPanel,
+  .ctaPanel {
+    align-items: start;
+  }
+
+  .ctaButton {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .hero {
+    min-height: 520px;
+    padding: 100px 0 70px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.65rem, 18vw, 5.2rem);
+  }
+
+  .heroShape {
+    width: 390px;
+    right: -210px;
+    bottom: -80px;
+  }
+
+  .section {
+    padding: 82px 0;
+  }
+
+  .sectionIntro,
+  .sectionIntroCompact {
+    gap: 38px;
+    margin-bottom: 42px;
+  }
+
+  .sectionIntro .eyebrow,
+  .sectionIntroCompact .eyebrow {
+    margin-bottom: -18px;
+  }
+
+  .audienceGrid,
+  .privacyCards,
+  .commitmentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .audienceCardWide {
+    grid-column: auto;
+  }
+
+  .commitmentCard,
+  .commitmentCard:nth-child(2),
+  .commitmentCard:last-child {
+    min-height: 280px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .commitmentCard:last-child {
+    border-bottom: 0;
+  }
+
+  .cardIndex {
+    margin-bottom: 58px;
+  }
+
+  .districtHeading {
+    gap: 38px;
+    padding-bottom: 50px;
+  }
+
+  .subsection {
+    padding: 56px 0;
+  }
+
+  .insuranceCard {
+    padding: 22px 20px;
+  }
+
+  .steps li {
+    grid-template-columns: 50px 1fr;
+    padding: 24px 10px;
+  }
+
+  .paymentPanel,
+  .ctaPanel {
+    padding: 30px 24px;
+    border-radius: 22px;
+  }
+
+  .privacyCards article {
+    min-height: auto;
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+}
