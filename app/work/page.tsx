@@ -1,18 +1,25 @@
+import type { Metadata } from "next";
 import ClientCard from "@/components/cards/ClientCard";
 import Container from "@/components/ui/Container";
 import { clients } from "@/data/clients";
 
-export default function WorkPage() {
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Explore branding, identity, web, print, and environmental design projects by C208 Design.",
+};
+
+export default function ProjectsPage() {
   return (
     <main className="bg-white">
       <section className="border-b border-black/10 bg-[#f2eee9]">
         <Container className="py-16 sm:py-20 lg:py-28">
           <div className="max-w-4xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
-              Selected work
+              Selected projects
             </p>
 
-            <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.05em] text-[#111111] sm:text-6xl lg:text-7xl">
+            <h1 className="display-heading text-[#111111]">
               Long-term creative partnerships.
             </h1>
 

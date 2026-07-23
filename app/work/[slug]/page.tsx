@@ -37,7 +37,6 @@ function ProjectArtwork({
   const caseStudy = client.caseStudy;
   const accent = caseStudy?.accent ?? "#111111";
   const accentSoft = caseStudy?.accentSoft ?? "#eeeeee";
-  const number = String(index + 1).padStart(2, "0");
 
   if (project.images?.length) {
     const plannedAssets = project.plannedAssets ?? [];
@@ -63,10 +62,7 @@ function ProjectArtwork({
 
     return (
       <article className="border-t border-black/12 pt-7 sm:pt-9">
-        <div className="mb-8 grid gap-4 md:grid-cols-[80px_0.8fr_1fr] md:gap-8 lg:mb-10 lg:grid-cols-[100px_0.8fr_1.1fr] lg:gap-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/35">
-            {number}
-          </p>
+        <div className="mb-8 grid gap-4 md:grid-cols-[0.8fr_1fr] md:gap-8 lg:mb-10 lg:grid-cols-[0.8fr_1.1fr] lg:gap-12">
           <h3 className="max-w-md text-2xl leading-tight tracking-[-0.025em] sm:text-3xl">
             {project.title}
           </h3>
@@ -196,9 +192,8 @@ function ProjectArtwork({
           index % 2 === 0 ? "text-[#111111]" : "text-white"
         }`}
       >
-        <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] opacity-65 sm:text-sm">
+        <div className="flex items-center text-xs font-semibold uppercase tracking-[0.2em] opacity-65 sm:text-sm">
           <span>{client.client}</span>
-          <span>{number}</span>
         </div>
 
         <div className="max-w-2xl">
@@ -231,7 +226,7 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
             className="inline-flex items-center gap-3 text-sm font-semibold transition-opacity hover:opacity-55"
           >
             <span aria-hidden="true">←</span>
-            All work
+            All projects
           </Link>
 
           <div className="mt-7 grid gap-10 sm:mt-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-20">
@@ -239,7 +234,7 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-black/45 sm:text-sm">
                 {caseStudy?.eyebrow ?? client.category}
               </p>
-              <h1 className="mt-5 max-w-5xl text-4xl leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+              <h1 className="display-heading mt-5 max-w-5xl">
                 {client.client}
               </h1>
             </div>
@@ -339,7 +334,7 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
             href="/work"
             className="group inline-flex items-center gap-4 text-2xl sm:text-3xl"
           >
-            View all work
+            View all projects
             <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">
               →
             </span>

@@ -14,7 +14,7 @@
 }
 
 .shell {
-  width: min(1180px, calc(100% - 48px));
+  width: min(1180px, calc(100% - 53px));
   margin: 0 auto;
 }
 
@@ -31,7 +31,7 @@
 .section h2,
 .ctaSection h2 {
   margin: 0;
-  font-family: var(--font-heading, "Corben", Georgia, serif);
+  font-family: var(--font-corben), serif;
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 0.98;
@@ -39,7 +39,7 @@
 
 .hero h1 {
   max-width: 760px;
-  font-size: clamp(4.5rem, 10vw, 9rem);
+  font-size: var(--display-heading-size);
 }
 
 .eyebrow {
@@ -56,20 +56,6 @@
   font-size: clamp(1.05rem, 1.8vw, 1.35rem);
   line-height: 1.65;
   color: var(--muted);
-}
-
-.heroShape {
-  position: absolute;
-  z-index: -1;
-  width: min(45vw, 620px);
-  aspect-ratio: 1;
-  right: -8vw;
-  bottom: -28%;
-  border: 1px solid rgba(23, 37, 31, 0.08);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at center, transparent 0 31%, rgba(172, 220, 215, 0.35) 31.5% 32.5%, transparent 33%),
-    radial-gradient(circle at center, transparent 0 56%, rgba(23, 37, 31, 0.08) 56.5% 57.5%, transparent 58%);
 }
 
 .section {
@@ -93,7 +79,7 @@
 
 .section h2,
 .ctaSection h2 {
-  font-size: clamp(2.7rem, 5vw, 5rem);
+  font-size: var(--display-heading-size);
 }
 
 .sectionIntro > p:last-child,
@@ -112,6 +98,7 @@
 .audienceGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: 16px;
 }
 
@@ -133,20 +120,19 @@
 
 .audienceCard span {
   max-width: 220px;
-  font-family: var(--font-heading, "Corben", Georgia, serif);
+  font-family: var(--font-corben), serif;
   font-size: clamp(1.35rem, 2.2vw, 2rem);
   line-height: 1.15;
 }
 
-.audienceCardWide {
-  grid-column: span 2;
+.audienceCardAlt {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
   background: var(--aqua-light);
 }
 
-.audienceCardWide p {
+.audienceCardAlt p {
   max-width: 520px;
   margin: 16px 0 0;
   color: var(--muted);
@@ -171,8 +157,8 @@
 
 .commitmentCard {
   position: relative;
-  min-height: 340px;
-  padding: 30px;
+  min-height: 280px;
+  padding: 24px 30px 30px;
   border-right: 1px solid var(--line);
 }
 
@@ -180,20 +166,12 @@
   border-right: 0;
 }
 
-.cardIndex {
-  display: block;
-  margin-bottom: 90px;
-  color: var(--muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-}
-
 .commitmentCard h3,
 .subsection h3,
 .paymentPanel h3,
 .privacyCards h3 {
   margin: 0;
-  font-family: var(--font-heading, "Corben", Georgia, serif);
+  font-family: var(--font-corben), serif;
   font-weight: 400;
 }
 
@@ -256,7 +234,8 @@
 
 .insuranceCard {
   display: grid;
-  grid-template-columns: 22px 1fr;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
   gap: 22px;
   padding: 24px 26px;
   border: 1px solid rgba(23, 37, 31, 0.12);
@@ -265,12 +244,34 @@
 }
 
 .insuranceMarker {
-  width: 12px;
-  height: 12px;
-  margin-top: 5px;
+  position: relative;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  background: var(--aqua);
+}
+
+.insuranceMarker::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 11px;
+  width: 9px;
+  height: 2px;
+  border-radius: 999px;
   background: var(--ink);
-  box-shadow: 0 0 0 6px rgba(172, 220, 215, 0.72);
+}
+
+.insuranceMarker::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid var(--ink);
+  border-right: 2px solid var(--ink);
+  transform: rotate(45deg);
 }
 
 .insuranceCard h4,
@@ -296,22 +297,14 @@
 }
 
 .steps li {
-  min-height: 250px;
-  padding: 24px;
+  min-height: 160px;
+  padding: 12px 24px;
   border-top: 1px solid var(--line);
   border-right: 1px solid var(--line);
 }
 
 .steps li:last-child {
   border-right: 0;
-}
-
-.stepNumber {
-  display: block;
-  margin-bottom: 62px;
-  font-size: 0.74rem;
-  letter-spacing: 0.12em;
-  color: var(--muted);
 }
 
 .paymentPanel {
@@ -341,6 +334,14 @@
   border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 999px;
   font-size: 0.9rem;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.paymentChips span:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.58);
+  background: rgba(172, 220, 215, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
 .privacySection {
@@ -455,14 +456,8 @@
 
   .steps li {
     min-height: auto;
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    gap: 18px;
+    padding: 12px 18px;
     border-right: 0;
-  }
-
-  .stepNumber {
-    margin: 0;
   }
 
   .paymentPanel,
@@ -477,22 +472,12 @@
 
 @media (max-width: 640px) {
   .shell {
-    width: min(100% - 28px, 1180px);
+    width: min(100% - 31px, 1180px);
   }
 
   .hero {
     min-height: 520px;
     padding: 100px 0 70px;
-  }
-
-  .hero h1 {
-    font-size: clamp(3.65rem, 18vw, 5.2rem);
-  }
-
-  .heroShape {
-    width: 390px;
-    right: -210px;
-    bottom: -80px;
   }
 
   .section {
@@ -516,10 +501,6 @@
     grid-template-columns: 1fr;
   }
 
-  .audienceCardWide {
-    grid-column: auto;
-  }
-
   .commitmentCard,
   .commitmentCard:nth-child(2),
   .commitmentCard:last-child {
@@ -530,10 +511,6 @@
 
   .commitmentCard:last-child {
     border-bottom: 0;
-  }
-
-  .cardIndex {
-    margin-bottom: 58px;
   }
 
   .districtHeading {
@@ -550,8 +527,7 @@
   }
 
   .steps li {
-    grid-template-columns: 50px 1fr;
-    padding: 24px 10px;
+    padding: 12px 10px;
   }
 
   .paymentPanel,

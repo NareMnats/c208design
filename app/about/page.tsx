@@ -83,7 +83,7 @@ export default function AboutPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
                 About C208 Design
               </p>
-              <h1 className="mt-5 text-4xl leading-[1.08] tracking-[-0.04em] sm:text-5xl lg:text-5xl">
+              <h1 className="display-heading mt-5">
                 Meet Nare Movsisyan, the educator & designer behind C208 Design.
               </h1>
               <div className="mt-8 space-y-5 text-base leading-7 text-black/65 sm:text-lg sm:leading-8">
@@ -111,7 +111,7 @@ export default function AboutPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/45 sm:text-sm">
               Curriculum Vitae
             </p>
-            <h2 className="mt-4 max-w-3xl text-4xl leading-tight tracking-[-0.035em] sm:text-5xl lg:text-5xl">
+            <h2 className="display-heading mt-4 max-w-3xl">
               Experience, education, & practice.
             </h2>
           </div>

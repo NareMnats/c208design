@@ -22,7 +22,7 @@ export default function EducatorSection() {
               Why C208?
             </p>
 
-            <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#6db2ab] sm:text-5xl lg:text-6xl">
+            <h2 className="display-heading text-[#6db2ab]">
               Built by an educator.
             </h2>
 
@@ -33,8 +33,8 @@ export default function EducatorSection() {
             <div className="mt-7 space-y-5 text-base leading-7 text-black/65 sm:text-lg sm:leading-8">
               <p>
                 That means understanding how administrators, teachers,
-                students, families, & communities interact with a school's
-                or organization's visual identity.
+                students, families, & communities interact with a school&apos;s
+                or organization&apos;s visual identity.
               </p>
 
               <p>

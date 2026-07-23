@@ -93,8 +93,8 @@ export default function FeaturedWork() {
               Selected projects
             </p>
 
-            <h2 className="text-4xl font-normal tracking-[-0.04em] text-[#111111] sm:text-5xl lg:text-6xl">
-              Featured work
+            <h2 className="display-heading text-[#111111]">
+              Featured projects
             </h2>
           </div>
 
@@ -102,7 +102,7 @@ export default function FeaturedWork() {
             href="/work"
             className="w-fit py-2 text-sm font-semibold text-[#111111] underline decoration-black/20 underline-offset-8 transition hover:decoration-black"
           >
-            View all work
+            View all projects
           </Link>
         </div>
 

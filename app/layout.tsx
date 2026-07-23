@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Corben, Geist_Mono, Roboto_Flex } from "next/font/google";
+import { Corben, Geist_Mono, Google_Sans_Flex } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const robotoFlex = Roboto_Flex({
-  variable: "--font-roboto-flex",
+const googleSansFlex = Google_Sans_Flex({
+  variable: "--font-google-sans-flex",
   subsets: ["latin"],
+  adjustFontFallback: false,
 });
 
 const geistMono = Geist_Mono({
@@ -44,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${robotoFlex.variable} ${geistMono.variable} ${corben.variable}`}
+      className={`${googleSansFlex.variable} ${geistMono.variable} ${corben.variable}`}
     >
       <body className="bg-[#f2eee9] text-[#111111] antialiased">
         <Navbar />

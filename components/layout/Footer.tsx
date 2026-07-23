@@ -3,8 +3,8 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 const navigation = [
-  { label: "Work", href: "/work" },
-  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/work" },
+  { label: "Working Together", href: "/services" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

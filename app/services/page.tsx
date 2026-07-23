@@ -1,12 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "./working-together.module.css";
 
+export const metadata: Metadata = {
+  title: "Working Together",
+  description:
+    "Learn how C208 Design partners with schools, public agencies, foundations, and community-focused organizations.",
+};
+
 const audiences = [
-  "Public school districts",
-  "Private schools",
-  "Civic organizations",
+  "Public School Districts",
+  "Private Schools",
+  "Civic Organizations",
   "Foundations",
-  "Public entities",
+  "Public Entities",
 ];
 
 const sharedCommitments = [
@@ -61,14 +68,14 @@ const insuranceItems = [
 ];
 
 const onboardingSteps = [
-  ["01", "Reach out", "Use the contact form to introduce the project and organization."],
-  ["02", "Discuss the scope", "We clarify goals, deliverables, timeline, and procurement needs."],
-  ["03", "Send vendor forms", "After C208 Design responds, the district may provide its vendor registration packet."],
-  ["04", "Receive documentation", "C208 Design supplies a completed W-9 with EIN and other requested materials."],
-  ["05", "Issue the PO", "Once onboarding is complete, the district may issue a purchase order and work can begin."],
+  ["Reach out", "Use the contact form to introduce the project and organization."],
+  ["Discuss the scope", "We clarify goals, deliverables, timeline, and procurement needs."],
+  ["Send vendor forms", "After C208 Design responds, the district may provide its vendor registration packet."],
+  ["Receive documentation", "C208 Design supplies a completed W-9 with EIN and other requested materials."],
+  ["Issue the PO", "Once onboarding is complete, the district may issue a purchase order and work can begin."],
 ];
 
-const paymentMethods = ["ACH / EFT", "Check", "Purchase order billing"];
+const paymentMethods = ["ACH / EFT", "Check", "PO Billing"];
 
 export default function WorkingTogetherPage() {
   return (
@@ -76,14 +83,13 @@ export default function WorkingTogetherPage() {
       <section className={styles.hero}>
         <div className={styles.shell}>
           <p className={styles.eyebrow}>C208 Design</p>
-          <h1>Working Together</h1>
+          <h1 className="display-heading">Working Together</h1>
           <p className={styles.heroCopy}>
             Every organization works differently. C208 Design builds clear,
             practical partnerships with schools, public agencies, foundations,
             and community-focused organizations.
           </p>
         </div>
-        <div className={styles.heroShape} aria-hidden="true" />
       </section>
 
       <section className={`${styles.section} ${styles.audienceSection}`}>
@@ -103,11 +109,11 @@ export default function WorkingTogetherPage() {
                 <span>{audience}</span>
               </article>
             ))}
-            <article className={`${styles.audienceCard} ${styles.audienceCardWide}`}>
-              <span>Don’t see your organization listed?</span>
+            <article className={`${styles.audienceCard} ${styles.audienceCardAlt}`}>
+              <span>Don’t See Your Organization Listed?</span>
               <p>
-                C208 Design also welcomes inquiries from other educational,
-                nonprofit, and community-serving organizations.
+                We welcome inquiries from any and all community-serving
+                organizations.
               </p>
             </article>
           </div>
@@ -122,9 +128,8 @@ export default function WorkingTogetherPage() {
           </div>
 
           <div className={styles.commitmentGrid}>
-            {sharedCommitments.map((item, index) => (
+            {sharedCommitments.map((item) => (
               <article className={styles.commitmentCard} key={item.title}>
-                <span className={styles.cardIndex}>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </article>
@@ -182,9 +187,8 @@ export default function WorkingTogetherPage() {
             </div>
 
             <ol className={styles.steps}>
-              {onboardingSteps.map(([number, title, description]) => (
-                <li key={number}>
-                  <span className={styles.stepNumber}>{number}</span>
+              {onboardingSteps.map(([title, description]) => (
+                <li key={title}>
                   <div>
                     <h4>{title}</h4>
                     <p>{description}</p>

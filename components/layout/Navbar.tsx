@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 
 const navigation = [
-  { label: "Work", href: "/work" },
-  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/work" },
+  { label: "Working Together", href: "/services" },
   { label: "About", href: "/about" },
 ];
 
@@ -23,16 +23,10 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!isHomepage) {
-      setIsVisible(true);
-      setShowSolidHomepageNavbar(false);
       return;
     }
 
     let previousScrollY = window.scrollY;
-
-    if (previousScrollY > 8) {
-      setIsVisible(false);
-    }
 
     function handleScroll() {
       const currentScrollY = window.scrollY;
@@ -52,10 +46,13 @@ export default function Navbar() {
       previousScrollY = currentScrollY;
     }
 
-    handleScroll();
+    const initialFrame = window.requestAnimationFrame(handleScroll);
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.cancelAnimationFrame(initialFrame);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [isHomepage]);
 
   function closeMenu() {

@@ -3,25 +3,21 @@ import Container from "@/components/ui/Container";
 
 const services = [
   {
-    number: "01",
     title: "Brand identity",
     description:
       "Visual identity systems that give schools, programs, and organizations a clear and consistent presence.",
   },
   {
-    number: "02",
     title: "Print and environmental design",
     description:
       "Campaign materials, publications, signage, banners, apparel, and other designs made for real-world use.",
   },
   {
-    number: "03",
     title: "Photography",
     description:
       "Authentic photography for campuses, programs, events, athletics, portraits, and community storytelling.",
   },
   {
-    number: "04",
     title: "Digital design",
     description:
       "Websites, social media graphics, presentations, and digital materials that communicate clearly across platforms.",
@@ -38,7 +34,7 @@ export default function ServicesPreview() {
               What C208 Design does
             </p>
 
-            <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#111111] sm:text-5xl">
+            <h2 className="display-heading text-[#111111]">
               Creative support from concept to completion.
             </h2>
 
@@ -51,20 +47,16 @@ export default function ServicesPreview() {
               href="/services"
               className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full border border-black/20 bg-[#c3d8d6] px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-black hover:bg-[#a2d9d6]"
             >
-              Explore services
+              Explore working together
             </Link>
           </div>
 
           <div className="border-t border-black/15">
             {services.map((service) => (
               <article
-                key={service.number}
-                className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[70px_0.75fr_1.25fr] sm:items-start sm:gap-6 sm:py-8"
+                key={service.title}
+                className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[0.75fr_1.25fr] sm:items-start sm:gap-6 sm:py-8"
               >
-                <p className="text-xs font-semibold tracking-[0.15em] text-black/40 sm:pt-1">
-                  {service.number}
-                </p>
-
                 <h3 className="text-xl font-semibold tracking-[-0.025em] text-[#6db2ab] sm:text-2xl">
                   {service.title}
                 </h3>

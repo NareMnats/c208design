@@ -27,7 +27,7 @@ export default function Hero() {
               Design for education and community
             </p>
 
-            <h1 className="max-w-5xl text-[clamp(2.25rem,6vw,5.4375rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-white">
+            <h1 className="display-heading max-w-5xl text-white">
               Branding that schools and organizations can be proud to
               represent.
             </h1>
@@ -43,7 +43,7 @@ export default function Hero() {
                 href="/work"
                 className="flex min-h-12 items-center justify-center rounded-full bg-[#c3d8d6] px-7 py-3.5 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#a2d9d6]"
               >
-                View work
+                View projects
               </Link>
 
               <Link

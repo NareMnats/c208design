@@ -11,7 +11,7 @@ export default function ContactCTA() {
               Start a project
             </p>
 
-            <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-5xl lg:text-7xl">
+            <h2 className="display-heading">
               Let&apos;s create something your community is proud to represent.
             </h2>
           </div>
