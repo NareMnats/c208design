@@ -5,7 +5,11 @@ export default function ContactCTA() {
   return (
     <section className="bg-[#111111] py-16 text-white sm:py-20 lg:py-28">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-20">
+        <div
+          className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-20"
+          data-reveal
+          data-parallax="0.018"
+        >
           <div className="max-w-4xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/55 sm:text-sm">
               Start a project

@@ -21,7 +21,11 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/20" />
 
       <Container className="relative z-10 grid min-h-[100svh] items-center">
-        <div className="py-28 sm:py-32">
+        <div
+          className="py-28 sm:py-32"
+          data-reveal
+          data-parallax="0.025"
+        >
           <div className="max-w-5xl">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/75 sm:text-sm">
               Design for education and community

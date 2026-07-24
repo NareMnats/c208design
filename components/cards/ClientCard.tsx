@@ -11,7 +11,10 @@ export default function ClientCard({ client }: ClientCardProps) {
   const isVideo = client.featuredMedia.toLowerCase().endsWith(".mp4");
 
   return (
-    <article className="border-t border-black/10 py-14 sm:py-16 lg:py-24">
+    <article
+      className="border-t border-black/10 py-14 sm:py-16 lg:py-24"
+      data-reveal
+    >
       <Container>
         <Link
           href={`/work/${client.slug}`}

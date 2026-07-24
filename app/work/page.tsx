@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ClientCard from "@/components/cards/ClientCard";
 import Container from "@/components/ui/Container";
+import ScrollMotion from "@/components/ui/ScrollMotion";
 import { clients } from "@/data/clients";
 
 export const metadata: Metadata = {
@@ -11,10 +12,14 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="bg-white">
+    <ScrollMotion className="bg-white">
       <section className="border-b border-black/10 bg-[#f2eee9]">
         <Container className="py-16 sm:py-20 lg:py-28">
-          <div className="max-w-4xl">
+          <div
+            className="max-w-4xl"
+            data-reveal
+            data-parallax="0.025"
+          >
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
               Selected projects
             </p>
@@ -31,11 +36,11 @@ export default function ProjectsPage() {
         </Container>
       </section>
 
-      <section>
+      <section data-reveal-group>
         {clients.map((client) => (
           <ClientCard key={client.slug} client={client} />
         ))}
       </section>
-    </main>
+    </ScrollMotion>
   );
 }

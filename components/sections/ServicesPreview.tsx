@@ -29,7 +29,11 @@ export default function ServicesPreview() {
     <section className="border-y border-black/10 bg-[#f2eee9] py-16 sm:py-20 lg:py-28">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-          <div className="max-w-md">
+          <div
+            className="max-w-md"
+            data-reveal
+            data-parallax="0.02"
+          >
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
               What C208 Design does
             </p>
@@ -51,9 +55,10 @@ export default function ServicesPreview() {
             </Link>
           </div>
 
-          <div className="border-t border-black/15">
+          <div className="border-t border-black/15" data-reveal-group>
             {services.map((service) => (
               <article
+                data-reveal
                 key={service.title}
                 className="grid gap-3 border-b border-black/15 py-7 sm:grid-cols-[0.75fr_1.25fr] sm:items-start sm:gap-6 sm:py-8"
               >

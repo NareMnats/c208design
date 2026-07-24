@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/components/ui/Container";
+import ScrollMotion from "@/components/ui/ScrollMotion";
 import { clients, type Client } from "@/data/clients";
 
 type PageProps = {
@@ -232,9 +233,13 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
   ];
 
   return (
-    <main className="bg-white text-[#111111]">
+    <ScrollMotion className="bg-white text-[#111111]">
       <section className="border-b border-black/10 bg-[#f2eee9]">
-        <Container className="py-7 sm:py-10 lg:py-14">
+        <Container
+          className="py-7 sm:py-10 lg:py-14"
+          data-reveal
+          data-parallax="0.02"
+        >
           <Link
             href="/work"
             className="inline-flex items-center gap-3 text-sm font-semibold transition-opacity hover:opacity-55"
@@ -262,16 +267,23 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
 
       <section className="bg-[#f2eee9] pb-10 pt-14 sm:pb-15 sm:pt-20 lg:pb-20 lg:pt-24">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[1.5fr_0.5fr] lg:gap-20">
-            <div>
+          <div
+            className="grid gap-12 lg:grid-cols-[1.5fr_0.5fr] lg:gap-20"
+            data-reveal-group
+          >
+            <div data-reveal>
               <h2 className="max-w-4xl text-2xl leading-[1.35] tracking-[-0.025em] sm:text-3xl lg:text-4xl">
                 {client.description}
               </h2>
 
-              <div className="mt-10 space-y-4 sm:mt-12 sm:space-y-5">
+              <div
+                className="mt-10 space-y-4 sm:mt-12 sm:space-y-5"
+                data-reveal-group
+              >
                 {narrativeSections.map((section) => (
                   <article
                     className="rounded-[20px] border-2 border-[#6db2ab] p-6 sm:p-8"
+                    data-reveal
                     key={section.label}
                   >
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/45 sm:text-sm">
@@ -285,7 +297,7 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
               </div>
             </div>
 
-            <aside className="lg:justify-self-end lg:pt-1">
+            <aside className="lg:justify-self-end lg:pt-1" data-reveal>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/55 sm:text-sm">
                 Services provided
               </p>
@@ -307,9 +319,12 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
 
       <section className="pb-16 sm:pb-24 lg:pb-32">
         <Container>
-          <div className="space-y-20 sm:space-y-28 lg:space-y-36">
+          <div
+            className="space-y-20 sm:space-y-28 lg:space-y-36"
+            data-reveal-group
+          >
             {client.projects.map((project, index) => (
-              <div key={project.slug}>
+              <div data-reveal key={project.slug}>
                 <ProjectArtwork project={project} index={index} client={client} />
               </div>
             ))}
@@ -318,7 +333,7 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
       </section>
 
       <section className="border-b border-black/10 py-12 sm:py-16">
-        <Container className="flex justify-end">
+        <Container className="flex justify-end" data-reveal>
           <Link
             href="/work"
             className="group inline-flex items-center gap-3 text-base font-semibold sm:text-lg"
@@ -330,6 +345,6 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
           </Link>
         </Container>
       </section>
-    </main>
+    </ScrollMotion>
   );
 }

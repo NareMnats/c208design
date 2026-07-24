@@ -5,7 +5,11 @@ export default function EducatorSection() {
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-28">
       <Container>
-        <div className="rounded-[28px] bg-[#a2d9d6] p-7 sm:p-10 lg:p-14">
+        <div
+          className="rounded-[28px] bg-[#a2d9d6] p-7 sm:p-10 lg:p-14"
+          data-reveal
+          data-parallax="0.018"
+        >
           <div className="max-w-4xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
               Why C208?

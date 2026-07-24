@@ -35,8 +35,9 @@ export default function ScrollMotion({
     );
 
     revealGroups.forEach((group) => {
-      const items = Array.from(
-        group.querySelectorAll<HTMLElement>("[data-reveal]"),
+      const items = Array.from(group.children).filter(
+        (item): item is HTMLElement =>
+          item instanceof HTMLElement && item.hasAttribute("data-reveal"),
       );
 
       items.forEach((item, index) => {

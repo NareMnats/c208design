@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
+import ScrollMotion from "@/components/ui/ScrollMotion";
 
 export const metadata: Metadata = {
   title: "About",
@@ -64,11 +65,17 @@ const proficiencies = [
 
 export default function AboutPage() {
   return (
-    <main className="bg-white text-[#111111]">
+    <ScrollMotion className="bg-white text-[#111111]">
       <section className="bg-[#f2eee9] py-14 sm:py-20 lg:py-28">
         <Container>
-          <div className="grid items-center gap-12 sm:gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24">
-            <div className="relative aspect-[2742/4032] w-full max-w-[680px] justify-self-center overflow-hidden bg-[#dfe5e2] lg:max-w-none">
+          <div
+            className="grid items-center gap-12 sm:gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24"
+            data-reveal-group
+          >
+            <div
+              className="relative aspect-[2742/4032] w-full max-w-[680px] justify-self-center overflow-hidden bg-[#dfe5e2] lg:max-w-none"
+              data-reveal
+            >
               <Image
                 src="/AboutMe.png"
                 alt="Portrait of Nare Movsisyan"
@@ -79,7 +86,11 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="max-w-2xl lg:py-8 xl:py-10">
+            <div
+              className="max-w-2xl lg:py-8 xl:py-10"
+              data-reveal
+              data-parallax="0.02"
+            >
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
                 About C208 Design
               </p>
@@ -107,7 +118,11 @@ export default function AboutPage() {
 
       <section className="border-t border-black/10 py-16 sm:py-24 lg:py-32">
         <Container>
-          <div className="mb-12 sm:mb-16 lg:mb-20">
+          <div
+            className="mb-12 sm:mb-16 lg:mb-20"
+            data-reveal
+            data-parallax="0.02"
+          >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/45 sm:text-sm">
               Curriculum Vitae
             </p>
@@ -116,7 +131,10 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid border-t border-black/15 md:grid-cols-3">
+          <div
+            className="grid border-t border-black/15 md:grid-cols-3"
+            data-reveal-group
+          >
             <CvColumn title="Design experience">
               <div className="space-y-8">
                 {experience.map((item) => (
@@ -151,7 +169,7 @@ export default function AboutPage() {
 
       <section className="border-t border-black/10 bg-[#f2eee9] py-16 sm:py-24 lg:py-32">
         <Container>
-          <div className="max-w-[70ch]">
+          <div className="w-full" data-reveal data-parallax="0.018">
             <h2 className="display-heading">My Ethos</h2>
 
             <div className="mt-8 space-y-6 text-base leading-7 text-black/65 sm:mt-10 sm:text-lg sm:leading-8">
@@ -219,11 +237,14 @@ export default function AboutPage() {
         role="img"
         aria-label="Full-width photography placeholder"
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/40">
+        <p
+          className="text-xs font-semibold uppercase tracking-[0.2em] text-black/40"
+          data-reveal
+        >
           Full-width image placeholder
         </p>
       </section>
-    </main>
+    </ScrollMotion>
   );
 }
 
@@ -235,7 +256,10 @@ function CvColumn({
   children: React.ReactNode;
 }) {
   return (
-    <article className="border-b border-black/15 py-9 md:border-b-0 md:border-r md:px-8 md:py-10 md:first:pl-0 md:last:border-r-0 md:last:pr-0 lg:px-12">
+    <article
+      className="border-b border-black/15 py-9 md:border-b-0 md:border-r md:px-8 md:py-10 md:first:pl-0 md:last:border-r-0 md:last:pr-0 lg:px-12"
+      data-reveal
+    >
       <h3 className="mb-9 text-2xl tracking-[-0.025em] sm:text-3xl">
         {title}
       </h3>

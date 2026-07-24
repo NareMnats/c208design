@@ -87,7 +87,11 @@ export default function FeaturedWork() {
     <section className="bg-white py-16 sm:py-20 lg:py-28">
       <Container>
         {/* Section heading */}
-        <div className="mb-10 flex flex-col gap-5 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
+        <div
+          className="mb-10 flex flex-col gap-5 sm:mb-12 sm:flex-row sm:items-end sm:justify-between"
+          data-reveal
+          data-parallax="0.02"
+        >
           <div>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
               Selected projects
@@ -107,7 +111,7 @@ export default function FeaturedWork() {
         </div>
 
         {/* Schurr High School */}
-        <article>
+        <article data-reveal>
           <Link
             href={`/work/${schurr.slug}`}
             className="group relative block h-[300px] overflow-hidden bg-[#18763f] sm:h-[440px] lg:h-[590px]"
@@ -176,9 +180,12 @@ export default function FeaturedWork() {
         </article>
 
         {/* MASCA and MovSys */}
-        <div className="mt-8 grid gap-10 md:grid-cols-2 md:gap-7 lg:mt-10 lg:gap-10">
+        <div
+          className="mt-8 grid gap-10 md:grid-cols-2 md:gap-7 lg:mt-10 lg:gap-10"
+          data-reveal-group
+        >
           {[masca, movsys].map((client) => (
-            <article key={client.slug}>
+            <article data-reveal key={client.slug}>
               <Link
                 href={`/work/${client.slug}`}
                 className="group relative block aspect-[4/3] overflow-hidden bg-[#f3f3f3]"
