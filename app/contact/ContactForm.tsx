@@ -2,10 +2,15 @@
 
 import { useActionState, useEffect, useRef } from "react";
 import {
-  initialContactFormState,
   submitContactForm,
+  type ContactFormState,
 } from "./actions";
 import styles from "./contact.module.css";
+
+const initialContactFormState: ContactFormState = {
+  status: "idle",
+  message: "",
+};
 
 const organizationTypes = [
   "School or district",

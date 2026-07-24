@@ -15,11 +15,6 @@ export type ContactFormState = {
   errors?: Partial<Record<ContactField, string>>;
 };
 
-export const initialContactFormState: ContactFormState = {
-  status: "idle",
-  message: "",
-};
-
 const organizationTypes = new Set([
   "",
   "School or district",
