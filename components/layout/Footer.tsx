@@ -40,9 +40,9 @@ export default function Footer() {
 
           <nav
             aria-label="Footer navigation"
-            className="justify-self-end text-right"
+            className="w-full justify-self-end text-center sm:w-auto sm:text-right"
           >
-            <ul className="flex flex-col items-end gap-4 text-sm font-medium">
+            <ul className="flex items-center justify-between whitespace-nowrap text-[0.6875rem] font-medium sm:flex-col sm:items-end sm:gap-4 sm:text-sm">
               {navigation.map((item) => (
                 <li key={item.href}>
                   <Link

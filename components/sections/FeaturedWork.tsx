@@ -199,7 +199,7 @@ export default function FeaturedWork() {
 
                 <div className="mt-2 flex items-start justify-between gap-5">
                   <div>
-                    <h3 className="text-2xl font-normal tracking-[-0.035em] text-[#111111] sm:text-3xl">
+                    <h3 className="text-3xl font-normal tracking-[-0.035em] text-[#111111]">
                       {client.client}
                     </h3>
 
