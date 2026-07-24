@@ -61,13 +61,19 @@ export default function ClientCard({ client }: ClientCardProps) {
               {client.description}
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              {client.services.map((service) => (
+            <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">
+              {client.services.map((service, index) => (
                 <span
                   key={service}
-                    className="rounded-full border border-black/15 px-4 py-2 text-xs font-medium text-[#111111] transition-colors hover:bg-[#e8f6f4] sm:text-sm"
+                  className="inline-flex items-center gap-3 text-xs font-medium text-[#111111] sm:text-sm"
                 >
-                  {service}
+                  {index > 0 && (
+                    <span
+                      aria-hidden="true"
+                      className="h-2.5 w-2.5 shrink-0 rounded-full border-2 border-[#92cbc7] bg-white"
+                    />
+                  )}
+                  <span>{service}</span>
                 </span>
               ))}
             </div>
