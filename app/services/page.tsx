@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ScrollMotion from "./ScrollMotion";
 import styles from "./working-together.module.css";
 
 export const metadata: Metadata = {
@@ -79,9 +80,9 @@ const paymentMethods = ["ACH / EFT", "Check", "PO Billing"];
 
 export default function WorkingTogetherPage() {
   return (
-    <main className={styles.page}>
+    <ScrollMotion className={styles.page}>
       <section className={styles.hero}>
-        <div className={styles.shell}>
+        <div className={styles.shell} data-reveal data-parallax="0.025">
           <p className={styles.eyebrow}>C208 Design</p>
           <h1 className="display-heading">Working Together</h1>
           <p className={styles.heroCopy}>
@@ -94,7 +95,11 @@ export default function WorkingTogetherPage() {
 
       <section className={`${styles.section} ${styles.audienceSection}`}>
         <div className={styles.shell}>
-          <div className={styles.sectionIntro}>
+          <div
+            className={styles.sectionIntro}
+            data-reveal
+            data-parallax="0.025"
+          >
             <p className={styles.eyebrow}>Who we work with</p>
             <h2>Designed for organizations that serve people.</h2>
             <p>
@@ -103,33 +108,46 @@ export default function WorkingTogetherPage() {
             </p>
           </div>
 
-          <div className={styles.audienceGrid}>
+          <ul className={styles.audienceGrid} data-reveal-group>
             {audiences.map((audience) => (
-              <article className={styles.audienceCard} key={audience}>
+              <li className={styles.audienceCard} data-reveal key={audience}>
                 <span>{audience}</span>
-              </article>
+              </li>
             ))}
-            <article className={`${styles.audienceCard} ${styles.audienceCardAlt}`}>
-              <span>Don’t See Your Organization Listed?</span>
-              <p>
-                We welcome inquiries from any and all community-serving
-                organizations.
-              </p>
-            </article>
+          </ul>
+
+          <div className={styles.audienceNote} data-reveal>
+            <p className={styles.audienceNoteTitle}>
+              Don’t see your organization listed?
+            </p>
+            <p>
+              We welcome inquiries from all community-serving organizations.{" "}
+              <Link href="/contact">
+                Tell us about yours <span aria-hidden="true">→</span>
+              </Link>
+            </p>
           </div>
         </div>
       </section>
 
       <section className={`${styles.section} ${styles.commitmentSection}`}>
         <div className={styles.shell}>
-          <div className={styles.sectionIntroCompact}>
+          <div
+            className={styles.sectionIntroCompact}
+            data-reveal
+            data-parallax="0.025"
+          >
             <p className={styles.eyebrow}>Every partnership</p>
             <h2>A thoughtful process, regardless of organization type.</h2>
           </div>
 
-          <div className={styles.commitmentGrid}>
+          <div className={styles.commitmentGrid} data-reveal-group>
             {sharedCommitments.map((item) => (
-              <article className={styles.commitmentCard} key={item.title}>
+              <article
+                className={styles.commitmentCard}
+                data-reveal
+                key={item.title}
+              >
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </article>
@@ -140,7 +158,11 @@ export default function WorkingTogetherPage() {
 
       <section className={`${styles.section} ${styles.districtSection}`}>
         <div className={styles.shell}>
-          <div className={styles.districtHeading}>
+          <div
+            className={styles.districtHeading}
+            data-reveal
+            data-parallax="0.02"
+          >
             <div>
               <p className={styles.eyebrow}>For public school districts</p>
               <h2>Prepared for procurement and vendor onboarding.</h2>
@@ -153,7 +175,7 @@ export default function WorkingTogetherPage() {
           </div>
 
           <div className={styles.subsection}>
-            <div className={styles.subsectionHeading}>
+            <div className={styles.subsectionHeading} data-reveal>
               <h3>Insurance coverage</h3>
               <p>
                 The following coverage and business-status information can be
@@ -161,10 +183,19 @@ export default function WorkingTogetherPage() {
               </p>
             </div>
 
-            <div className={styles.insuranceGrid}>
+            <div className={styles.insuranceGrid} data-reveal-group>
               {insuranceItems.map((item) => (
-                <article className={styles.insuranceCard} key={item.title}>
-                  <div className={styles.insuranceMarker} aria-hidden="true" />
+                <article
+                  className={styles.insuranceCard}
+                  data-reveal
+                  key={item.title}
+                >
+                  <div className={styles.insuranceMarker} aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M5 12h14" />
+                      <path d="m13 6 6 6-6 6" />
+                    </svg>
+                  </div>
                   <div>
                     <h4>{item.title}</h4>
                     <p>{item.description}</p>
@@ -173,7 +204,7 @@ export default function WorkingTogetherPage() {
               ))}
             </div>
 
-            <p className={styles.note}>
+            <p className={styles.note} data-reveal>
               Final coverage requirements are determined by each district and
               may involve discussion with its procurement director or risk
               management office.
@@ -181,14 +212,17 @@ export default function WorkingTogetherPage() {
           </div>
 
           <div className={`${styles.subsection} ${styles.onboardingSubsection}`}>
-            <div className={styles.subsectionHeading}>
+            <div className={styles.subsectionHeading} data-reveal>
               <h3>Vendor onboarding</h3>
               <p>A straightforward path from initial inquiry to project start.</p>
             </div>
 
-            <ol className={styles.steps}>
-              {onboardingSteps.map(([title, description]) => (
-                <li key={title}>
+            <ol className={styles.steps} data-reveal-group>
+              {onboardingSteps.map(([title, description], index) => (
+                <li data-reveal key={title}>
+                  <span className={styles.stepMarker} aria-hidden="true">
+                    STEP {String.fromCharCode(65 + index)}
+                  </span>
                   <div>
                     <h4>{title}</h4>
                     <p>{description}</p>
@@ -198,7 +232,7 @@ export default function WorkingTogetherPage() {
             </ol>
           </div>
 
-          <div className={styles.paymentPanel}>
+          <div className={styles.paymentPanel} data-reveal>
             <div>
               <p className={styles.eyebrow}>Payment</p>
               <h3>District-friendly payment options</h3>
@@ -218,7 +252,11 @@ export default function WorkingTogetherPage() {
 
       <section className={`${styles.section} ${styles.privacySection}`}>
         <div className={styles.shell}>
-          <div className={styles.privacyStatement}>
+          <div
+            className={styles.privacyStatement}
+            data-reveal
+            data-parallax="0.02"
+          >
             <p className={styles.eyebrow}>Privacy and confidentiality</p>
             <h2>Protecting students and organizational information.</h2>
             <p>
@@ -227,8 +265,8 @@ export default function WorkingTogetherPage() {
             </p>
           </div>
 
-          <div className={styles.privacyCards}>
-            <article>
+          <div className={styles.privacyCards} data-reveal-group>
+            <article data-reveal>
               <h3>Student photography</h3>
               <p>
                 Students will not be photographed as part of project work
@@ -236,7 +274,7 @@ export default function WorkingTogetherPage() {
                 authorized, and coordinated by the client organization.
               </p>
             </article>
-            <article>
+            <article data-reveal>
               <h3>Student data</h3>
               <p>
                 C208 Design holds student privacy to a high standard and follows
@@ -244,7 +282,7 @@ export default function WorkingTogetherPage() {
                 based on the project scope.
               </p>
             </article>
-            <article>
+            <article data-reveal>
               <h3>Data agreements</h3>
               <p>
                 When a project requires access to protected information, C208
@@ -258,7 +296,7 @@ export default function WorkingTogetherPage() {
 
       <section className={styles.ctaSection}>
         <div className={styles.shell}>
-          <div className={styles.ctaPanel}>
+          <div className={styles.ctaPanel} data-reveal>
             <div>
               <p className={styles.eyebrow}>Have a project in mind?</p>
               <h2>Reach out.</h2>
@@ -274,6 +312,6 @@ export default function WorkingTogetherPage() {
           </div>
         </div>
       </section>
-    </main>
+    </ScrollMotion>
   );
 }

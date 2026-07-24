@@ -3,6 +3,8 @@
   --muted: #58625d;
   --aqua: #acdcd7;
   --aqua-strong: #a2d9d6;
+  --aqua-dark: #2f716d;
+  --aqua-outline: #6db2ab;
   --aqua-light: #e8f6f4;
   --cream: #f5f0e7;
   --cream-light: #fbf8f2;
@@ -96,47 +98,61 @@
 }
 
 .audienceGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
+  list-style: none;
 }
 
 .audienceCard {
-  min-height: 190px;
-  padding: 28px;
+  flex: 0 1 280px;
+  height: 100px;
+  padding: 20px 26px;
   display: flex;
-  align-items: flex-end;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.72);
-  transition: transform 180ms ease, background-color 180ms ease;
-}
-
-.audienceCard:hover {
-  transform: translateY(-4px);
-  background: var(--white);
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--aqua-outline);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.58);
+  text-align: center;
 }
 
 .audienceCard span {
-  max-width: 220px;
   font-family: var(--font-corben), serif;
-  font-size: clamp(1.35rem, 2.2vw, 2rem);
-  line-height: 1.15;
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  line-height: 1.2;
 }
 
-.audienceCardAlt {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  background: var(--aqua-light);
+.audienceNote {
+  max-width: 680px;
+  margin: 42px auto 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  text-align: center;
 }
 
-.audienceCardAlt p {
-  max-width: 520px;
-  margin: 16px 0 0;
+.audienceNote p {
+  margin: 0;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.audienceNote .audienceNoteTitle {
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-family: var(--font-corben), serif;
+  font-size: 1.4rem;
+  line-height: 1.25;
+}
+
+.audienceNote a {
+  color: var(--aqua-outline);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
 }
 
 .commitmentSection {
@@ -157,8 +173,7 @@
 
 .commitmentCard {
   position: relative;
-  min-height: 280px;
-  padding: 24px 30px 30px;
+  padding: 24px 30px 28px;
   border-right: 1px solid var(--line);
 }
 
@@ -238,9 +253,9 @@
 
 .insuranceCard {
   display: grid;
-  grid-template-columns: 24px 1fr;
+  grid-template-columns: 32px 1fr;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
   padding: 24px 26px;
   border: 1px solid rgba(23, 37, 31, 0.12);
   border-radius: 18px;
@@ -248,34 +263,24 @@
 }
 
 .insuranceMarker {
-  position: relative;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--aqua-outline);
   border-radius: 50%;
-  background: var(--aqua);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.76);
 }
 
-.insuranceMarker::before {
-  content: "";
-  position: absolute;
-  left: 7px;
-  top: 11px;
-  width: 9px;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--ink);
-}
-
-.insuranceMarker::after {
-  content: "";
-  position: absolute;
-  right: 6px;
-  top: 8px;
-  width: 7px;
-  height: 7px;
-  border-top: 2px solid var(--ink);
-  border-right: 2px solid var(--ink);
-  transform: rotate(45deg);
+.insuranceMarker svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .insuranceCard h4,
@@ -308,13 +313,30 @@
 
 .steps li {
   min-height: 160px;
-  padding: 12px 24px;
+  padding: 24px 24px 28px;
   border-top: 1px solid var(--line);
   border-right: 1px solid var(--line);
 }
 
 .steps li:last-child {
   border-right: 0;
+}
+
+.stepMarker {
+  height: 32px;
+  width: fit-content;
+  margin-bottom: 24px;
+  padding: 0 13px;
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid var(--aqua-outline);
+  border-radius: 999px;
+  color: var(--white);
+  background: var(--aqua-outline);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.1em;
 }
 
 .paymentPanel {
@@ -444,7 +466,6 @@
     margin-bottom: -30px;
   }
 
-  .audienceGrid,
   .privacyCards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -467,7 +488,7 @@
 
   .steps li {
     min-height: auto;
-    padding: 12px 18px;
+    padding: 22px 18px 26px;
     border-right: 0;
   }
 
@@ -506,16 +527,29 @@
     margin-bottom: -18px;
   }
 
-  .audienceGrid,
   .privacyCards,
   .commitmentGrid {
     grid-template-columns: 1fr;
   }
 
+  .audienceGrid {
+    gap: 12px;
+  }
+
+  .audienceCard {
+    flex-basis: 100%;
+    height: 76px;
+    padding: 17px 22px;
+  }
+
+  .audienceNote {
+    margin-top: 34px;
+    padding-top: 26px;
+  }
+
   .commitmentCard,
   .commitmentCard:nth-child(2),
   .commitmentCard:last-child {
-    min-height: 280px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
@@ -538,7 +572,11 @@
   }
 
   .steps li {
-    padding: 12px 10px;
+    padding: 20px 10px 24px;
+  }
+
+  .stepMarker {
+    margin-bottom: 20px;
   }
 
   .paymentPanel,

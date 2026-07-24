@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 
 const navigation = [
+  { label: "Home", href: "/" },
   { label: "Projects", href: "/work" },
   { label: "Working Together", href: "/services" },
   { label: "About", href: "/about" },
