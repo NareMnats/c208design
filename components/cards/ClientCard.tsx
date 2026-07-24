@@ -65,7 +65,7 @@ export default function ClientCard({ client }: ClientCardProps) {
               {client.services.map((service) => (
                 <span
                   key={service}
-                  className="rounded-full border border-black/15 px-4 py-2 text-xs font-medium text-[#111111] sm:text-sm"
+                    className="rounded-full border border-black/15 px-4 py-2 text-xs font-medium text-[#111111] transition-colors hover:bg-[#e8f6f4] sm:text-sm"
                 >
                   {service}
                 </span>
