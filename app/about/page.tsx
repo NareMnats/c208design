@@ -67,8 +67,8 @@ export default function AboutPage() {
     <main className="bg-white text-[#111111]">
       <section className="bg-[#f2eee9] py-14 sm:py-20 lg:py-28">
         <Container>
-          <div className="grid items-center gap-10 md:grid-cols-[1.05fr_0.95fr] md:gap-14 lg:gap-24">
-            <div className="relative aspect-[2742/4032] min-h-[460px] overflow-hidden bg-[#dfe5e2] sm:min-h-[620px] lg:min-h-[760px]">
+          <div className="grid items-center gap-12 sm:gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-24">
+            <div className="relative aspect-[2742/4032] w-full max-w-[680px] justify-self-center overflow-hidden bg-[#dfe5e2] lg:max-w-none">
               <Image
                 src="/AboutMe.png"
                 alt="Portrait of Nare Movsisyan"
@@ -79,7 +79,7 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="max-w-2xl md:py-10">
+            <div className="max-w-2xl lg:py-8 xl:py-10">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/50 sm:text-sm">
                 About C208 Design
               </p>

@@ -180,7 +180,7 @@ export default function WorkingTogetherPage() {
             </p>
           </div>
 
-          <div className={styles.subsection}>
+          <div className={`${styles.subsection} ${styles.onboardingSubsection}`}>
             <div className={styles.subsectionHeading}>
               <h3>Vendor onboarding</h3>
               <p>A straightforward path from initial inquiry to project start.</p>
@@ -261,7 +261,7 @@ export default function WorkingTogetherPage() {
           <div className={styles.ctaPanel}>
             <div>
               <p className={styles.eyebrow}>Have a project in mind?</p>
-              <h2>Let’s talk.</h2>
+              <h2>Reach out.</h2>
               <p>
                 Use the contact form to share a little about your organization,
                 project, and timeline. Vendor registration materials can be

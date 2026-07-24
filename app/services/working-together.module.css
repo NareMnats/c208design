@@ -2,6 +2,7 @@
   --ink: #17251f;
   --muted: #58625d;
   --aqua: #acdcd7;
+  --aqua-strong: #a2d9d6;
   --aqua-light: #e8f6f4;
   --cream: #f5f0e7;
   --cream-light: #fbf8f2;
@@ -207,6 +208,10 @@
   border-bottom: 1px solid var(--line);
 }
 
+.subsection.onboardingSubsection {
+  padding-bottom: 0;
+}
+
 .subsectionHeading {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -280,11 +285,17 @@
 }
 
 .note {
-  max-width: 760px;
+  max-width: none;
   margin: 24px 0 0;
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+@media (min-width: 961px) {
+  .note {
+    white-space: nowrap;
+  }
 }
 
 .steps {
@@ -386,7 +397,7 @@
   gap: 56px;
   align-items: end;
   border-radius: 28px;
-  background: var(--cream);
+  background: var(--aqua-strong);
 }
 
 .ctaPanel p:last-child {
@@ -404,6 +415,7 @@
   min-width: 180px;
   padding: 17px 20px;
   border: 1px solid var(--ink);
+  background: var(--white);
   color: var(--ink);
   text-decoration: none;
   font-weight: 700;
