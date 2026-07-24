@@ -216,6 +216,20 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
   if (!client) notFound();
 
   const caseStudy = client.caseStudy;
+  const narrativeSections = [
+    {
+      label: "Challenge",
+      copy: caseStudy?.challenge ?? client.description,
+    },
+    {
+      label: "Approach",
+      copy: caseStudy?.approach ?? caseStudy?.introduction ?? client.tagline,
+    },
+    {
+      label: "Outcome",
+      copy: caseStudy?.outcome ?? client.tagline,
+    },
+  ];
 
   return (
     <main className="bg-white text-[#111111]">
@@ -254,18 +268,20 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
                 {client.description}
               </h2>
 
-              <div className="mt-10 grid gap-7 sm:mt-12 md:grid-cols-2 md:gap-10 lg:gap-14">
-                <p className="max-w-xl text-sm leading-6 text-black/65 sm:text-base sm:leading-7">
-                  {caseStudy?.introduction ?? client.tagline}
-                </p>
-                <div className="space-y-6">
-                  <p className="max-w-xl text-sm leading-6 text-black/65 sm:text-base sm:leading-7">
-                    {caseStudy?.challenge ?? client.description}
-                  </p>
-                  <p className="max-w-xl text-sm leading-6 text-black/65 sm:text-base sm:leading-7">
-                    {caseStudy?.outcome}
-                  </p>
-                </div>
+              <div className="mt-10 space-y-4 sm:mt-12 sm:space-y-5">
+                {narrativeSections.map((section) => (
+                  <article
+                    className="rounded-[20px] border-2 border-[#6db2ab] p-6 sm:p-8"
+                    key={section.label}
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/45 sm:text-sm">
+                      {section.label}
+                    </p>
+                    <p className="mt-3 max-w-[70ch] text-sm leading-6 text-black/65 sm:mt-4 sm:text-base sm:leading-7">
+                      {section.copy}
+                    </p>
+                  </article>
+                ))}
               </div>
             </div>
 
@@ -275,17 +291,17 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
               </p>
               <ul className="mt-6 space-y-3 text-sm leading-6 text-black/55 sm:text-base">
                 {client.services.map((service) => (
-                  <li key={service}>{service}</li>
+                  <li
+                    className="relative w-fit pb-1 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:bg-[#6db2ab] after:transition-transform after:duration-300 hover:after:scale-x-100"
+                    key={service}
+                  >
+                    {service}
+                  </li>
                 ))}
               </ul>
             </aside>
           </div>
 
-          {caseStudy ? (
-            <h2 className="mt-16 max-w-6xl text-2xl leading-[1.35] tracking-[-0.025em] text-[#6db2ab] sm:mt-24 sm:text-3xl lg:mt-28 lg:text-4xl">
-              {caseStudy.approach}
-            </h2>
-          ) : null}
         </Container>
       </section>
 
@@ -301,38 +317,11 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
         </Container>
       </section>
 
-      {caseStudy ? (
-        <section className="bg-[#111111] py-16 text-white sm:py-24 lg:py-32">
-          <Container>
-            <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr] lg:gap-24">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50 sm:text-sm">
-                The outcome
-              </p>
-              <div>
-                <p className="max-w-5xl text-3xl leading-[1.35] tracking-[-0.025em] text-white/90 sm:text-4xl lg:text-5xl">
-                  {caseStudy.outcome}
-                </p>
-                <Link
-                  href="/contact"
-                  className="mt-10 inline-flex min-h-12 items-center gap-4 rounded-full bg-[#a2d9d6] px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#92cbc7]"
-                >
-                  Start a project
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
-          </Container>
-        </section>
-      ) : null}
-
       <section className="border-b border-black/10 py-12 sm:py-16">
-        <Container className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-black/45">
-            Continue exploring
-          </p>
+        <Container className="flex justify-end">
           <Link
             href="/work"
-            className="group inline-flex items-center gap-4 text-2xl sm:text-3xl"
+            className="group inline-flex items-center gap-3 text-base font-semibold sm:text-lg"
           >
             View all projects
             <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">

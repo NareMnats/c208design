@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 const navigation = [
+  { label: "Home", href: "/" },
   { label: "Projects", href: "/work" },
   { label: "Working Together", href: "/services" },
   { label: "About", href: "/about" },
@@ -37,8 +38,11 @@ export default function Footer() {
             </p>
           </div>
 
-          <nav aria-label="Footer navigation">
-            <ul className="grid grid-cols-2 gap-x-10 gap-y-4 text-sm font-medium sm:flex sm:flex-wrap sm:gap-7">
+          <nav
+            aria-label="Footer navigation"
+            className="justify-self-end text-right"
+          >
+            <ul className="flex flex-col items-end gap-4 text-sm font-medium">
               {navigation.map((item) => (
                 <li key={item.href}>
                   <Link
