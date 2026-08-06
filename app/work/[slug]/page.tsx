@@ -148,6 +148,7 @@ function ProjectArtwork({
                     alt={image.alt}
                     width={image.width}
                     height={image.height}
+                    loading={image.loading}
                     sizes={
                       isFullWidth
                         ? "(max-width: 1023px) 100vw, 1400px"

@@ -8,6 +8,7 @@ export type ClientProject = {
     width: number;
     height: number;
     fullWidth?: boolean;
+    loading?: "eager" | "lazy";
   }>;
   plannedAssets?: Array<{
     label: string;
@@ -315,16 +316,64 @@ export const clients: Client[] = [
         ],
       },
       {
-        title: "Montebello Youth Identity",
-        slug: "montebello-youth-identity",
+        title: "MASCA Letterhead",
+        slug: "masca-letterhead",
+        description:
+          "A polished letterhead system that carries MASCA’s established identity into official correspondence while keeping information clear and approachable.",
+        images: [
+          {
+            src: "/projects/masca/MASCA_Letterhead.png",
+            alt: "Montebello–Ashiya Sister City Association letterhead design",
+            width: 2000,
+            height: 1314,
+            fullWidth: true,
+          },
+        ],
       },
       {
-        title: "Ashiya Youth Identity",
-        slug: "ashiya-youth-identity",
+        title: "Youth Identity",
+        slug: "youth-identity",
+        description:
+          "A bilingual youth identity system with complementary Montebello and Ashiya marks, unified by a shared palette, typography, and sense of connection.",
+        images: [
+          {
+            src: "/projects/masca/MASCAYouth_Logo_20260806.png",
+            alt: "Montebello and Ashiya Youth logo variations in full color and monochrome",
+            width: 6250,
+            height: 4167,
+            fullWidth: true,
+            loading: "eager",
+          },
+          {
+            src: "/projects/masca/MASCAYouth_Identity.png",
+            alt: "MASCA Youth color palette and typography system",
+            width: 9584,
+            height: 2084,
+            fullWidth: true,
+          },
+        ],
       },
       {
         title: "Youth Stickers",
         slug: "youth-stickers",
+        description:
+          "A compact expression of the youth identity designed for giveaways, personal gear, and everyday visibility across the exchange community. We thank the Ashiya Cosmopolitan Association for their collaboration on this project.",
+        images: [
+          {
+            src: "/projects/masca/MASCAYouth_Stickers.png",
+            alt: "Montebello–Ashiya Youth logo stickers",
+            width: 2000,
+            height: 657,
+            fullWidth: true,
+          },
+          {
+            src: "/projects/masca/MASCAYouth_Bottle.png",
+            alt: "Montebello–Ashiya Youth logo sticker applied to a reusable bottle",
+            width: 2000,
+            height: 954,
+            fullWidth: true,
+          },
+        ],
       },
     ],
   },

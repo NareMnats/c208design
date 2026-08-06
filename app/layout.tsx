@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Corben, Geist_Mono, Google_Sans_Flex } from "next/font/google";
+import { Corben, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const googleSansFlex = Google_Sans_Flex({
+const googleSansFlex = localFont({
+  src: "./fonts/google-sans-flex-latin.woff2",
   variable: "--font-google-sans-flex",
-  subsets: ["latin"],
+  display: "swap",
+  weight: "1 1000",
+  style: "normal",
+  fallback: ["Arial", "sans-serif"],
   adjustFontFallback: false,
 });
 
