@@ -51,7 +51,12 @@ export default function ClientCard({ client }: ClientCardProps) {
             </p>
 
             <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-[#111111] sm:text-4xl lg:text-5xl">
-              {client.client}
+              <Link
+                href={`/work/${client.slug}`}
+                className="inline-block transition-opacity duration-300 hover:opacity-55 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]"
+              >
+                {client.client}
+              </Link>
             </h2>
 
             <p className="mt-4 max-w-2xl text-lg font-medium leading-8 text-[#111111]">

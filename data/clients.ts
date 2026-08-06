@@ -62,11 +62,11 @@ export const clients: Client[] = [
       introduction:
         "Schurr High School needed more than a collection of individual design pieces. It needed a visual language flexible enough to support academics, student programs, campus life, and recognition—while always feeling unmistakably Schurr.",
       challenge:
-        "Many audiences share the same campus, but each program has its own voice. The challenge was to create distinction without fragmentation: work that could feel energetic, credible, and student-centered while strengthening one shared identity.",
+        "Many audiences share the same campus, but each program has its own voice. The challenge was to create distinction without fragmenting: work that feels energetic and student-centered while strengthening one shared identity.",
       approach:
-        "C208 Design built the system from the school outward. Strong Spartan cues, a focused green palette, clear typography, and adaptable graphic elements create continuity across everything from pathway identities to murals, maps, posters, and pins.",
+        "C208 Design built the system from the school outward. Strong Spartan cues, a green palette, clear typography, and adaptable graphic elements create continuity across everything from career pathway identities to murals, maps, posters, and pins.",
       outcome:
-        "The result is a growing identity system rather than a one-time campaign—one that helps students recognize their programs, gives staff practical tools, and makes school pride visible across campus.",
+        "The result is a growing identity system rather than a one-time campaign—one that helps students recognize their programs, gives staff practical visual assets, and makes school pride visible across campus.",
       partnership: "Ongoing creative partnership",
       accent: "#18763f",
       accentSoft: "#dceee2",
@@ -76,7 +76,7 @@ export const clients: Client[] = [
         title: "PVP Pathway Branding",
         slug: "pvp-pathway-branding",
         description:
-          "A flexible pathway identity designed to make project-based visual programming feel approachable, creative, and connected to the wider Schurr community.",
+          "A pathway identity designed to make Project-Based Visual Programming (PVP) feel approachable and connected to the rest of the Schurr community.",
         images: [
           {
             src: "/projects/schurr/PVP_Logos.png",
@@ -96,7 +96,7 @@ export const clients: Client[] = [
         title: "Gaming Association Branding",
         slug: "gaming-association-branding",
         description:
-          "An energetic student-organization identity built to work across digital spaces, apparel, events, and member recognition.",
+          "A student-org identity built to work across digital spaces, apparel, events, & member recognition.",
         images: [
           {
             src: "/projects/schurr/GA_Logo.png",
@@ -127,7 +127,7 @@ export const clients: Client[] = [
         title: "Engineering & Design Pathway Branding",
         slug: "engineering-design-pathway-branding",
         description:
-          "A bold, technical identity that gives the Engineering & Design Pathway its own character while remaining part of Schurr's visual family.",
+          "An identity that gives the Engineering & Design Pathway (E&D) its own character while remaining part of Schurr's visual family.",
         images: [
           {
             src: "/projects/schurr/Eng_Logo.png",
@@ -153,7 +153,7 @@ export const clients: Client[] = [
         title: "Schurr High School Identity",
         slug: "school-identity",
         description:
-          "A cohesive school-wide identity system that brings the Spartan mark, shared values, typography, and green palette into everyday campus communication.",
+          "A school-wide identity system that brings the Spartan mark, shared values, typography, and green palette into everyday campus visuals.",
         images: [
           {
             src: "/projects/schurr/SHS_Logos.png",
@@ -181,7 +181,7 @@ export const clients: Client[] = [
         galleryColumns: 3,
         galleryEqualHeight: true,
         description:
-          "A large-scale environmental concept that turns a prominent campus wall into a visible expression of Spartan identity, values, and pride.",
+          "A large-scale environmental concept that turned our prominent campus wall into a visible expression of Spartan identity, values, & pride.",
         images: [
           {
             src: "/projects/schurr/Mural_Full.png",
@@ -215,7 +215,7 @@ export const clients: Client[] = [
         title: "Academic Awards Pins",
         slug: "academic-awards-pins",
         description:
-          "A family of small recognition pieces that gives academic achievement and pathway participation a tangible, collectible presence.",
+          "A family of small recognition pieces that gives academic achievement & participation a tangible, collectible presence.",
         images: [
           {
             src: "/projects/schurr/S_Pins.png",
@@ -229,7 +229,7 @@ export const clients: Client[] = [
         title: "Campus Posters",
         slug: "campus-posters",
         description:
-          "A coordinated set of visual tools makes behavior expectations and core learning frameworks clear, engaging, and accessible for daily campus use.",
+          "A coordinated set of visual posters makes behavioral expectations and core learning frameworks clear, engaging, & accessible for daily campus use.",
         images: [
           {
             src: "/projects/schurr/PBIS_Poster.png",
@@ -249,7 +249,7 @@ export const clients: Client[] = [
         title: "Campus Map Redesign",
         slug: "campus-map-redesign",
         description:
-          "A practical campus-navigation system reorganized for clarity, legibility, and faster orientation for students, families, staff, and visitors.",
+          "A campus-navigation system redesigned for clarity, legibility, and faster orientation for students, families, staff, & visitors.",
         images: [
           {
             src: "/projects/schurr/Schurr_Map.png",
@@ -274,13 +274,13 @@ export const clients: Client[] = [
     caseStudy: {
       eyebrow: "A digital home for cultural exchange",
       introduction:
-        "MASCA needed a website that could clearly share its mission, programs, history, and opportunities to participate with families and community members in Montebello.",
+        "MASCA needed a website that could clearly share its mission, programs, history, & opportunities to participate with families and community members in Montebello.",
       challenge:
-        "The existing digital experience needed a rethink. The challenge was to organize a wide range of information into an approachable site while reflecting the warmth & longevity of the Montebello–Ashiya relationship.",
+        "The existing digital experience needed an overhaul. The challenge was to organize a wide range of info into an approachable site while reflecting the warmth & longevity of the Montebello–Ashiya relationship.",
       approach:
         "C208 Design redesigned the MASCA website in its entirety, then designed and developed a custom WordPress theme from the ground up rather than using a prebuilt template.",
       outcome:
-        "The result is a distinctive, maintainable website that gives MASCA a voice, makes its programs easier to explore, and provides a flexible foundation for future stories and events.",
+        "The result is a modern & maintainable website that gives MASCA a voice, makes its programs easier to explore, and provides a flexible foundation for future stories & events.",
       partnership: "Website strategy, design, and development",
       accent: "#c94f62",
       accentSoft: "#f5e2e5",
@@ -290,7 +290,7 @@ export const clients: Client[] = [
         title: "Website Redesign",
         slug: "website-redesign",
         description:
-          "A complete redesign and custom WordPress build, including a bespoke theme designed from scratch to support MASCA’s content, programs, and community storytelling without relying on an existing template.",
+          "A complete redesign and custom WordPress build, including a theme designed from scratch to support MASCA’s content, programs, and community storytelling without relying on an existing template.",
         images: [
           {
             src: "/projects/masca/Website.mp4",
@@ -319,7 +319,7 @@ export const clients: Client[] = [
         title: "MASCA Letterhead",
         slug: "masca-letterhead",
         description:
-          "A polished letterhead system that carries MASCA’s established identity into official correspondence while keeping information clear and approachable.",
+          "A letterhead redesign that carries MASCA’s established identity into official correspondence while keeping information clear & approachable.",
         images: [
           {
             src: "/projects/masca/MASCA_Letterhead.png",
@@ -334,7 +334,7 @@ export const clients: Client[] = [
         title: "Youth Identity",
         slug: "youth-identity",
         description:
-          "A bilingual youth identity system with complementary Montebello and Ashiya marks, unified by a shared palette, typography, and sense of connection.",
+          "A bilingual youth identity system with complementary Montebello and Ashiya marks, unified by a shared palette, type, and sense of connection.",
         images: [
           {
             src: "/projects/masca/MASCAYouth_Logo_20260806.png",
@@ -346,7 +346,7 @@ export const clients: Client[] = [
           },
           {
             src: "/projects/masca/MASCAYouth_Identity.png",
-            alt: "MASCA Youth color palette and typography system",
+            alt: "MASCA Youth color palette & type system",
             width: 9584,
             height: 2084,
             fullWidth: true,
@@ -357,7 +357,7 @@ export const clients: Client[] = [
         title: "Youth Stickers",
         slug: "youth-stickers",
         description:
-          "A compact expression of the youth identity designed for giveaways, personal gear, and everyday visibility across the exchange community. We thank the Ashiya Cosmopolitan Association for their collaboration on this project.",
+          "An expression of the youth identity logo designed for giveaways, personal gear, and everyday visibility across the exchange community. We thank the Ashiya Cosmopolitan Association for their collaboration on this project.",
         images: [
           {
             src: "/projects/masca/MASCAYouth_Stickers.png",
@@ -380,7 +380,7 @@ export const clients: Client[] = [
   {
     slug: "movsys-engineering",
     client: "MovSys Engineering & Consulting",
-    tagline: "Professional branding for a modern engineering firm.",
+    tagline: "Professional branding for a modern hardware engineering consultant.",
     description:
       "A complete visual identity including a logo, website, and business card.",
     category: "Business",
@@ -388,16 +388,68 @@ export const clients: Client[] = [
     featuredMedia: "/projects/movsys/hero.mp4",
     projects: [
       {
+        title: "Website Redesign",
+        slug: "website-redesign",
+        description:
+          "A website experience that introduces MovSys, communicates its engineering expertise, and gives prospective clients a clear path into their services.",
+        images: [
+          {
+            src: "/projects/movsys/Website.mp4",
+            alt: "A slideshow of the MovSys Engineering & Consulting website",
+            width: 1920,
+            height: 1080,
+            fullWidth: true,
+          },
+        ],
+      },
+      {
         title: "Brand Identity",
         slug: "brand-identity",
+        description:
+          "An identity system built around a hardware-inspired monogram with an M-shaped electrical trace design and a green-to-cyan palette.",
+        images: [
+          {
+            src: "/projects/movsys/MovSys_Logo.png",
+            alt: "MovSys Engineering & Consulting logo variations",
+            width: 8334,
+            height: 2084,
+            fullWidth: true,
+          },
+          {
+            src: "/projects/movsys/MovSys_Identity.png",
+            alt: "MovSys color palette & type system",
+            width: 13542,
+            height: 2084,
+            fullWidth: true,
+          },
+        ],
       },
       {
-        title: "Website",
-        slug: "website",
-      },
-      {
-        title: "Business Card",
-        slug: "business-card",
+        title: "Business Cards",
+        slug: "business-cards",
+        description:
+          "A fun business-card system pairing gradient details with precision-cut black sleeves that turn the MovSys business card into a memorable reveal.",
+        images: [
+          {
+            src: "/projects/movsys/MovSys_BC_All.png",
+            alt: "MovSys business cards and die-cut black sleeves",
+            width: 3888,
+            height: 1545,
+            fullWidth: true,
+          },
+          {
+            src: "/projects/movsys/MovSys_BC_Close.png",
+            alt: "Close view of MovSys business cards with gradient and black finishes",
+            width: 2000,
+            height: 1333,
+          },
+          {
+            src: "/projects/movsys/MovSys_BC_Half.png",
+            alt: "MovSys business card partially revealed from its die-cut sleeve",
+            width: 3888,
+            height: 2592,
+          },
+        ],
       },
     ],
   },
