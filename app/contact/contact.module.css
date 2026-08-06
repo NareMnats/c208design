@@ -303,6 +303,7 @@
 
 .formStatusSuccess {
   color: #31655f;
+  font-weight: 700;
 }
 
 @media (min-width: 640px) {
