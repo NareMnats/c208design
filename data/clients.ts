@@ -97,6 +97,7 @@ export const clients: Client[] = [
         slug: "gaming-association-branding",
         description:
           "A student-org identity built to work across digital spaces, apparel, events, & member recognition.",
+        galleryColumns: 2,
         images: [
           {
             src: "/projects/schurr/GA_Logo.png",
@@ -105,23 +106,25 @@ export const clients: Client[] = [
             height: 6250,
           },
           {
+            src: "/projects/schurr/GA_Pins.png",
+            alt: "Schurr Gaming Association and Legacy Alumni enamel pins",
+            width: 1300,
+            height: 1299,
+          },
+          {
+            src: "/projects/schurr/GA_Shirts.png",
+            alt: "Schurr Gaming Association shirt designs in black, gray, and white",
+            width: 2000,
+            height: 830,
+            fullWidth: true,
+          },
+          {
             src: "/projects/schurr/GA_Identity.png",
             alt: "Schurr Gaming Association color and typography system",
             width: 13542,
             height: 2084,
           },
         ],
-        plannedAssets: [
-          {
-            label: "GA shirt designs",
-            note: "Reserved for upcoming apparel artwork",
-          },
-          {
-            label: "GA pins",
-            note: "Reserved for upcoming pin photography",
-          },
-        ],
-        plannedAssetsBeforeLastImage: true,
       },
       {
         title: "Engineering & Design Pathway Branding",
