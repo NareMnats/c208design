@@ -228,6 +228,7 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
   if (!client) notFound();
 
   const caseStudy = client.caseStudy;
+  const isMiscellaneousWork = client.slug === "miscellaneous-work";
   const narrativeSections = [
     {
       label: "Challenge",
@@ -279,7 +280,11 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
       <section className="bg-[#f2eee9] pb-10 pt-14 sm:pb-15 sm:pt-20 lg:pb-20 lg:pt-24">
         <Container>
           <div
-            className="grid gap-12 lg:grid-cols-[1.5fr_0.5fr] lg:gap-20"
+            className={
+              isMiscellaneousWork
+                ? ""
+                : "grid gap-12 lg:grid-cols-[1.5fr_0.5fr] lg:gap-20"
+            }
             data-reveal-group
           >
             <div data-reveal>
@@ -287,42 +292,46 @@ export default async function ClientCaseStudyPage({ params }: PageProps) {
                 {client.description}
               </h2>
 
-              <div
-                className="mt-10 space-y-4 sm:mt-12 sm:space-y-5"
-                data-reveal-group
-              >
-                {narrativeSections.map((section) => (
-                  <article
-                    className="rounded-[20px] border-2 border-[#6db2ab] p-6 sm:p-8"
-                    data-reveal
-                    key={section.label}
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/45 sm:text-sm">
-                      {section.label}
-                    </p>
-                    <p className="mt-3 max-w-[70ch] text-sm leading-6 text-black/65 sm:mt-4 sm:text-base sm:leading-7">
-                      {section.copy}
-                    </p>
-                  </article>
-                ))}
-              </div>
+              {!isMiscellaneousWork && (
+                <div
+                  className="mt-10 space-y-4 sm:mt-12 sm:space-y-5"
+                  data-reveal-group
+                >
+                  {narrativeSections.map((section) => (
+                    <article
+                      className="rounded-[20px] border-2 border-[#6db2ab] p-6 sm:p-8"
+                      data-reveal
+                      key={section.label}
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/45 sm:text-sm">
+                        {section.label}
+                      </p>
+                      <p className="mt-3 max-w-[70ch] text-sm leading-6 text-black/65 sm:mt-4 sm:text-base sm:leading-7">
+                        {section.copy}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <aside className="lg:justify-self-end lg:pt-1" data-reveal>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/55 sm:text-sm">
-                Services provided
-              </p>
-              <ul className="mt-6 space-y-3 text-sm leading-6 text-black/55 sm:text-base">
-                {client.services.map((service) => (
-                  <li
-                    className="relative w-fit pb-1 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:bg-[#6db2ab] after:transition-transform after:duration-300 hover:after:scale-x-100"
-                    key={service}
-                  >
-                    {service}
-                  </li>
-                ))}
-              </ul>
-            </aside>
+            {!isMiscellaneousWork && (
+              <aside className="lg:justify-self-end lg:pt-1" data-reveal>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-black/55 sm:text-sm">
+                  Services provided
+                </p>
+                <ul className="mt-6 space-y-3 text-sm leading-6 text-black/55 sm:text-base">
+                  {client.services.map((service) => (
+                    <li
+                      className="relative w-fit pb-1 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:bg-[#6db2ab] after:transition-transform after:duration-300 hover:after:scale-x-100"
+                      key={service}
+                    >
+                      {service}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            )}
           </div>
 
         </Container>
