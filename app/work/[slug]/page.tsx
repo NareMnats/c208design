@@ -77,6 +77,7 @@ function ProjectArtwork({
           <ProjectLightboxGallery
             title={project.title}
             images={project.images}
+            coverFit={project.galleryCoverFit}
           />
         ) : (
           <div

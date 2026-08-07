@@ -13,6 +13,7 @@ export type ClientProject = {
   description?: string;
   images?: ClientProjectImage[];
   galleryMode?: "lightbox";
+  galleryCoverFit?: "contain";
   plannedAssets?: Array<{
     label: string;
     note: string;
@@ -486,6 +487,69 @@ export const clients: Client[] = [
     },
     projects: [
       {
+        title: "ArmAng Armenian Typeface",
+        slug: "armang-armenian-typeface",
+        description:
+          "An Armenian typeface designed as an MFA thesis project at California State University, Long Beach, presented through a type specimen, large-scale vinyl installation, and experimental visual studies.",
+        galleryMode: "lightbox",
+        images: [
+          {
+            src: "/projects/miscellaneous/armang/vinyl_1.png",
+            alt: "ArmAng Armenian typeface displayed as a large-scale red and gold vinyl wall installation",
+            width: 2000,
+            height: 1333,
+          },
+          {
+            src: "/projects/miscellaneous/armang/typespecimen_1.png",
+            alt: "Open ArmAng type specimen book showing the project introduction in Armenian and English",
+            width: 2000,
+            height: 1333,
+          },
+          {
+            src: "/projects/miscellaneous/armang/typespecimen_2.png",
+            alt: "Open ArmAng type specimen book showing Armenian glyph construction studies",
+            width: 2000,
+            height: 1333,
+          },
+          {
+            src: "/projects/miscellaneous/armang/vinyl_2.png",
+            alt: "Close view of the ArmAng vinyl installation with red Armenian and Latin letterforms",
+            width: 2000,
+            height: 1333,
+          },
+          {
+            src: "/projects/miscellaneous/armang/vinyl_3.png",
+            alt: "ArmAng red Armenian letterforms with circular gold construction guides",
+            width: 2000,
+            height: 1333,
+          },
+          {
+            src: "/projects/miscellaneous/armang/vinyl_4.png",
+            alt: "ArmAng brown and gold Armenian letterforms in the vinyl installation",
+            width: 2000,
+            height: 1333,
+          },
+          {
+            src: "/projects/miscellaneous/armang/Experiment1.png",
+            alt: "ArmAng experimental composition in warm tan and burgundy",
+            width: 2000,
+            height: 1294,
+          },
+          {
+            src: "/projects/miscellaneous/armang/Experiment2.png",
+            alt: "ArmAng experimental composition layering translucent Armenian letterforms",
+            width: 2000,
+            height: 1294,
+          },
+          {
+            src: "/projects/miscellaneous/armang/Experiment3.png",
+            alt: "ArmAng experimental composition with textured figurative imagery",
+            width: 2000,
+            height: 1294,
+          },
+        ],
+      },
+      {
         title: "Armenian Health Collaboration Identity",
         slug: "armenian-health-collaboration-identity",
         description:
@@ -549,6 +613,34 @@ export const clients: Client[] = [
             alt: "Birchwood Ale Oaked bottle photographed outdoors",
             width: 1074,
             height: 1500,
+          },
+        ],
+      },
+      {
+        title: "The Stinking Rose Brand Redesign",
+        slug: "the-stinking-rose-brand-redesign",
+        description:
+          "A college branding redesign concept for The Stinking Rose restaurant chain, bringing its garlic-focused personality and Italian heritage into a coordinated stationery system.",
+        galleryMode: "lightbox",
+        galleryCoverFit: "contain",
+        images: [
+          {
+            src: "/projects/miscellaneous/stinking-rose/StinkingRose_All.png",
+            alt: "The Stinking Rose redesigned stationery system with letterhead, business cards, and envelope",
+            width: 1400,
+            height: 2000,
+          },
+          {
+            src: "/projects/miscellaneous/stinking-rose/StinkingRose_LetterBC.png",
+            alt: "The Stinking Rose redesigned envelope and business cards styled with garlic and red roses",
+            width: 1400,
+            height: 980,
+          },
+          {
+            src: "/projects/miscellaneous/stinking-rose/StinkingRose_LetterEnv.png",
+            alt: "The Stinking Rose redesigned letterhead and envelope styled with garlic and red roses",
+            width: 1400,
+            height: 980,
           },
         ],
       },

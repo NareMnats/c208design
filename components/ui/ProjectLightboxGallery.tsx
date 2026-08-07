@@ -8,11 +8,13 @@ import type { ClientProjectImage } from "@/data/clients";
 type ProjectLightboxGalleryProps = {
   title: string;
   images: ClientProjectImage[];
+  coverFit?: "contain";
 };
 
 export default function ProjectLightboxGallery({
   title,
   images,
+  coverFit,
 }: ProjectLightboxGalleryProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dialogTitleId = useId();
@@ -60,14 +62,26 @@ export default function ProjectLightboxGallery({
         onClick={() => setIsOpen(true)}
         className="group relative block w-full cursor-zoom-in overflow-hidden bg-[#231f20] text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]"
       >
-        <Image
-          src={cover.src}
-          alt={cover.alt}
-          width={cover.width}
-          height={cover.height}
-          sizes="(max-width: 1023px) 100vw, 1400px"
-          className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.012]"
-        />
+        {coverFit === "contain" ? (
+          <span className="relative block aspect-[4/3] w-full">
+            <Image
+              src={cover.src}
+              alt={cover.alt}
+              fill
+              sizes="(max-width: 1023px) 100vw, 1400px"
+              className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.012]"
+            />
+          </span>
+        ) : (
+          <Image
+            src={cover.src}
+            alt={cover.alt}
+            width={cover.width}
+            height={cover.height}
+            sizes="(max-width: 1023px) 100vw, 1400px"
+            className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.012]"
+          />
+        )}
 
         <span className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-5 bg-black/80 px-5 py-4 text-white backdrop-blur-sm sm:px-7 sm:py-5">
           <span className="text-sm font-semibold sm:text-base">
