@@ -53,7 +53,7 @@ export default function ClientCard({ client }: ClientCardProps) {
             <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-[#111111] sm:text-4xl lg:text-5xl">
               <Link
                 href={`/work/${client.slug}`}
-                className="inline-block transition-opacity duration-300 hover:opacity-55 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]"
+                className="inline-block underline decoration-transparent underline-offset-[0.14em] transition-[text-decoration-color] duration-300 hover:decoration-current focus-visible:rounded-sm focus-visible:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]"
               >
                 {client.client}
               </Link>

@@ -132,9 +132,9 @@ export default function FeaturedWork() {
 
               <div className="mt-2 flex items-end justify-between gap-6">
                 <div>
-                  <h3 className="text-2xl font-normal tracking-[-0.035em] text-white sm:text-3xl">
-  {schurr.client}
-</h3>
+                  <h3 className="text-2xl font-normal tracking-[-0.035em] text-white underline decoration-transparent underline-offset-[0.14em] transition-[text-decoration-color] duration-300 group-hover:decoration-current sm:text-3xl">
+                    {schurr.client}
+                  </h3>
 
                   <p className="mt-2 max-w-2xl text-base leading-7 text-white/80">
                     {schurr.tagline}
@@ -162,7 +162,12 @@ export default function FeaturedWork() {
             </p>
 
             <h3 className="mt-2 text-3xl font-normal tracking-[-0.04em] text-[#111111]">
-              {schurr.client}
+              <Link
+                href={`/work/${schurr.slug}`}
+                className="inline-block underline decoration-transparent underline-offset-[0.14em] transition-[text-decoration-color] duration-300 hover:decoration-current focus-visible:rounded-sm focus-visible:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]"
+              >
+                {schurr.client}
+              </Link>
             </h3>
 
             <p className="mt-2 text-sm leading-6 text-black/60">
@@ -207,7 +212,12 @@ export default function FeaturedWork() {
                 <div className="mt-2 flex items-start justify-between gap-5">
                   <div>
                     <h3 className="text-3xl font-normal tracking-[-0.035em] text-[#111111]">
-                      {client.client}
+                      <Link
+                        href={`/work/${client.slug}`}
+                        className="inline-block underline decoration-transparent underline-offset-[0.14em] transition-[text-decoration-color] duration-300 hover:decoration-current focus-visible:rounded-sm focus-visible:decoration-current focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#111111]"
+                      >
+                        {client.client}
+                      </Link>
                     </h3>
 
                     <p className="mt-2 max-w-lg text-sm leading-6 text-black/60 sm:text-base sm:leading-7">
