@@ -78,6 +78,7 @@ function ProjectArtwork({
             title={project.title}
             images={project.images}
             coverFit={project.galleryCoverFit}
+            coverIndex={project.galleryCoverIndex}
           />
         ) : (
           <div

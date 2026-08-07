@@ -14,6 +14,7 @@ export type ClientProject = {
   images?: ClientProjectImage[];
   galleryMode?: "lightbox";
   galleryCoverFit?: "contain";
+  galleryCoverIndex?: number;
   plannedAssets?: Array<{
     label: string;
     note: string;
@@ -469,8 +470,7 @@ export const clients: Client[] = [
       "An evolving collection of standalone logos, undergraduate and graduate design work, concept studies, and projects that sit outside the larger client partnerships.",
     category: "Independent",
     services: ["Logo Design", "Academic Work", "Design Explorations"],
-    featuredMedia: "/c208-logo-blackcyan.png",
-    mediaFit: "contain",
+    featuredMedia: "/projects/miscellaneous/MiscBanner.png",
     caseStudy: {
       eyebrow: "A broader archive of design exploration",
       introduction:
@@ -622,7 +622,7 @@ export const clients: Client[] = [
         description:
           "A college branding redesign concept for The Stinking Rose restaurant chain, bringing its garlic-focused personality and Italian heritage into a coordinated stationery system.",
         galleryMode: "lightbox",
-        galleryCoverFit: "contain",
+        galleryCoverIndex: 1,
         images: [
           {
             src: "/projects/miscellaneous/stinking-rose/StinkingRose_All.png",

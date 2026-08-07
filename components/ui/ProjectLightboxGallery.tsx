@@ -9,12 +9,14 @@ type ProjectLightboxGalleryProps = {
   title: string;
   images: ClientProjectImage[];
   coverFit?: "contain";
+  coverIndex?: number;
 };
 
 export default function ProjectLightboxGallery({
   title,
   images,
   coverFit,
+  coverIndex = 0,
 }: ProjectLightboxGalleryProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dialogTitleId = useId();
@@ -50,7 +52,7 @@ export default function ProjectLightboxGallery({
     };
   }, [isOpen]);
 
-  const cover = images[0];
+  const cover = images[coverIndex] ?? images[0];
 
   return (
     <>
