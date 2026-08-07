@@ -1,15 +1,18 @@
+export type ClientProjectImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  fullWidth?: boolean;
+  loading?: "eager" | "lazy";
+};
+
 export type ClientProject = {
   title: string;
   slug: string;
   description?: string;
-  images?: Array<{
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-    fullWidth?: boolean;
-    loading?: "eager" | "lazy";
-  }>;
+  images?: ClientProjectImage[];
+  galleryMode?: "lightbox";
   plannedAssets?: Array<{
     label: string;
     note: string;
@@ -35,7 +38,7 @@ export type Client = {
   client: string;
   tagline: string;
   description: string;
-  category: "Education" | "Community" | "Business";
+  category: "Education" | "Community" | "Business" | "Independent";
   services: string[];
   featuredMedia: string;
   mediaFit?: "cover" | "contain";
@@ -453,6 +456,107 @@ export const clients: Client[] = [
             height: 2592,
           },
         ],
+      },
+    ],
+  },
+  {
+    slug: "miscellaneous-work",
+    client: "Miscellaneous Work",
+    tagline:
+      "Independent identities, academic projects, mockups, and visual experiments.",
+    description:
+      "An evolving collection of standalone logos, undergraduate and graduate design work, concept studies, and projects that sit outside the larger client partnerships.",
+    category: "Independent",
+    services: ["Logo Design", "Academic Work", "Design Explorations"],
+    featuredMedia: "/c208-logo-blackcyan.png",
+    mediaFit: "contain",
+    caseStudy: {
+      eyebrow: "A broader archive of design exploration",
+      introduction:
+        "Not every piece belongs to a long-term client engagement. This collection creates space for focused identities, academic investigations, mockups, and ideas developed through independent practice.",
+      challenge:
+        "Standalone and exploratory work spans different audiences, formats, and moments in the design process, so the collection needs room to remain varied without feeling disconnected.",
+      approach:
+        "The work is organized by type rather than client, allowing individual marks, academic projects, and visual studies to be added over time while preserving the context behind each piece.",
+      outcome:
+        "The result is an evolving archive that complements the larger case studies and shows a wider range of process, craft, and visual exploration.",
+      partnership: "Independent and academic work",
+      accent: "#1aa9ad",
+      accentSoft: "#dcefee",
+    },
+    projects: [
+      {
+        title: "Armenian Health Collaboration Identity",
+        slug: "armenian-health-collaboration-identity",
+        description:
+          "A visual identity for Armenian Health Collaboration, a nonprofit led by Armenian doctors and medical professionals working to deliver medical aid to people in Armenia.",
+        images: [
+          {
+            src: "/projects/miscellaneous/AHC_Logo.png",
+            alt: "Armenian Health Collaboration logo shown on light and dark backgrounds",
+            width: 4167,
+            height: 2084,
+            fullWidth: true,
+          },
+          {
+            src: "/projects/miscellaneous/AHC_Identity.png",
+            alt: "Armenian Health Collaboration color palette and typography system",
+            width: 9375,
+            height: 2084,
+            fullWidth: true,
+          },
+        ],
+      },
+      {
+        title: "Birchwood Ale Packaging",
+        slug: "birchwood-ale-packaging",
+        description:
+          "A college packaging project built around an original beer brand, featuring a hand-applied gold-leaf emblem and a custom typeface created for the Birchwood wordmark.",
+        galleryMode: "lightbox",
+        images: [
+          {
+            src: "/projects/miscellaneous/birchwood/Birchwood_All.png",
+            alt: "Birchwood Ale bottle and four-pack packaging displayed outdoors",
+            width: 1500,
+            height: 1000,
+          },
+          {
+            src: "/projects/miscellaneous/birchwood/Birchwood_Font.png",
+            alt: "Custom display typeface created for the Birchwood Ale wordmark",
+            width: 3319,
+            height: 655,
+          },
+          {
+            src: "/projects/miscellaneous/birchwood/Birchwood_Palette.png",
+            alt: "Birchwood Ale black, gold, yellow, and pale green color palette",
+            width: 2000,
+            height: 300,
+          },
+          {
+            src: "/projects/miscellaneous/birchwood/Birchwood_3Bottles.png",
+            alt: "Birchwood Ale Pale, Original, and Oaked bottle designs",
+            width: 1200,
+            height: 1200,
+          },
+          {
+            src: "/projects/miscellaneous/birchwood/Birchwood_Bottle1.png",
+            alt: "Birchwood Ale Pale bottle photographed outdoors",
+            width: 1500,
+            height: 1000,
+          },
+          {
+            src: "/projects/miscellaneous/birchwood/Birchwood_Bottle2.png",
+            alt: "Birchwood Ale Oaked bottle photographed outdoors",
+            width: 1074,
+            height: 1500,
+          },
+        ],
+      },
+      {
+        title: "Mockups & Explorations",
+        slug: "mockups-and-explorations",
+        description:
+          "Concept designs, presentation mockups, and visual experiments that explore materials, formats, and new directions.",
       },
     ],
   },

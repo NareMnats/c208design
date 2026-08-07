@@ -232,18 +232,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section
-        className="flex min-h-[680px] w-full items-end bg-[#d9dfdc] p-6 sm:min-h-[820px] sm:p-10 lg:h-[1000px] lg:p-12"
-        role="img"
-        aria-label="Full-width photography placeholder"
-      >
-        <p
-          className="text-xs font-semibold uppercase tracking-[0.2em] text-black/40"
-          data-reveal
-        >
-          Full-width image placeholder
-        </p>
-      </section>
     </ScrollMotion>
   );
 }

@@ -37,7 +37,9 @@ export default function ClientCard({ client }: ClientCardProps) {
               alt={`${client.client} featured project`}
               fill
               sizes="(max-width: 768px) 100vw, 1400px"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+              className={`${
+                client.mediaFit === "contain" ? "object-contain p-10 sm:p-14" : "object-cover"
+              } transition-transform duration-700 ease-out group-hover:scale-[1.015]`}
             />
           )}
 

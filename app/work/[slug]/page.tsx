@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/components/ui/Container";
+import ProjectLightboxGallery from "@/components/ui/ProjectLightboxGallery";
 import ScrollMotion from "@/components/ui/ScrollMotion";
 import { clients, type Client } from "@/data/clients";
 
@@ -72,22 +73,28 @@ function ProjectArtwork({
           </p>
         </div>
 
-        <div
-          className={`grid items-start gap-4 sm:gap-6 ${
-            project.galleryColumns === 2
-              ? "md:grid-cols-2"
-              : firstImageIsWide && totalAssets >= 4
-              ? "md:grid-cols-2 lg:grid-cols-3"
-              : firstImageIsWide
+        {project.galleryMode === "lightbox" ? (
+          <ProjectLightboxGallery
+            title={project.title}
+            images={project.images}
+          />
+        ) : (
+          <div
+            className={`grid items-start gap-4 sm:gap-6 ${
+              project.galleryColumns === 2
                 ? "md:grid-cols-2"
-              : totalAssets === 2
-                ? "md:grid-cols-2"
-                : totalAssets >= 3
-                  ? "md:grid-cols-2 lg:grid-cols-3"
-                  : ""
-          }`}
-        >
-          {galleryItems.map((item) => {
+                : firstImageIsWide && totalAssets >= 4
+                ? "md:grid-cols-2 lg:grid-cols-3"
+                : firstImageIsWide
+                  ? "md:grid-cols-2"
+                : totalAssets === 2
+                  ? "md:grid-cols-2"
+                  : totalAssets >= 3
+                    ? "md:grid-cols-2 lg:grid-cols-3"
+                    : ""
+            }`}
+          >
+            {galleryItems.map((item) => {
             if (item.type === "planned") {
               return (
                 <div
@@ -167,8 +174,9 @@ function ProjectArtwork({
                 )}
               </figure>
             );
-          })}
-        </div>
+            })}
+          </div>
+        )}
       </article>
     );
   }

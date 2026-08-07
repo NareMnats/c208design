@@ -25,12 +25,13 @@ export default function ProjectsPage() {
             </p>
 
             <h1 className="display-heading text-[#111111]">
-              Long-term creative partnerships.
+              Creative work across partnerships and practice.
             </h1>
 
             <p className="mt-7 max-w-3xl text-lg leading-8 text-black/65 sm:text-xl sm:leading-9">
-              Identity systems, websites, environmental graphics, and print
-              materials developed around the needs of each organization.
+              Identity systems, websites, environmental graphics, print
+              materials, and independent explorations developed across client
+              partnerships and personal practice.
             </p>
           </div>
         </Container>
