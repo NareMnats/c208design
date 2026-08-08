@@ -470,7 +470,7 @@ export const clients: Client[] = [
       "An evolving collection of standalone logos, undergraduate and graduate design work, concept studies, and projects that sit outside the larger client partnerships.",
     category: "Independent",
     services: ["Logo Design", "Academic Work", "Design Explorations"],
-    featuredMedia: "/projects/miscellaneous/MiscBanner.png",
+    featuredMedia: "/projects/miscellaneous/MiscBanner-20260807.png",
     caseStudy: {
       eyebrow: "A broader archive of design exploration",
       introduction:

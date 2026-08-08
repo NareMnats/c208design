@@ -33,7 +33,7 @@ export default function Footer() {
             </Link>
 
             <p className="mt-3 max-w-md text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
-              Branding, design, photography, and creative support for schools,
+              Branding, graphic design, web design, and creative support for schools,
               organizations, and communities.
             </p>
           </div>

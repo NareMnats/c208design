@@ -24,7 +24,6 @@ const organizationTypes = [
 const projectTypes = [
   "Brand identity",
   "Print or environmental design",
-  "Photography",
   "Website or digital design",
   "Ongoing creative support",
   "Other",

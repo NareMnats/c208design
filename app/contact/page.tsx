@@ -7,7 +7,10 @@ import styles from "./contact.module.css";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a branding, design, photography, or digital project with C208 Design.",
+    "Start a branding, graphic design, print, digital, or web project with C208 Design across Los Angeles County and Orange County.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -44,7 +47,8 @@ export default function ContactPage() {
               <p>
                 You do not need a finished brief. A little context about the
                 audience, goals, and timing will help make the first
-                conversation useful.
+                conversation useful. C208 Design serves organizations across
+                Los Angeles County and Orange County.
               </p>
 
               <ol className={styles.processList}>

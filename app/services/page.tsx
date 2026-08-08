@@ -4,9 +4,12 @@ import ScrollMotion from "@/components/ui/ScrollMotion";
 import styles from "./working-together.module.css";
 
 export const metadata: Metadata = {
-  title: "Working Together",
+  title: "Graphic Design Services for Schools & Organizations",
   description:
-    "Learn how C208 Design partners with schools, public agencies, foundations, and community-focused organizations.",
+    "Brand identity, print, environmental, digital, and web design services for schools, public agencies, nonprofits, and community organizations across Los Angeles County and Orange County.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const audiences = [

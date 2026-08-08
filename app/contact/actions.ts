@@ -28,7 +28,6 @@ const organizationTypes = new Set([
 const projectTypes = new Set([
   "Brand identity",
   "Print or environmental design",
-  "Photography",
   "Website or digital design",
   "Ongoing creative support",
   "Other",

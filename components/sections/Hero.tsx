@@ -37,9 +37,10 @@ export default function Hero() {
             </h1>
 
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8 md:text-xl">
-              C208 Design creates thoughtful brand identities, print materials,
-              photography, and digital experiences for schools, programs, and
-              community organizations.
+              C208 Design creates thoughtful brand identities, print-ready
+              materials, environmental graphics, and digital experiences for schools, programs, and
+              community organizations across Los Angeles County and Orange
+              County.
             </p>
 
             <div className="mt-6 flex flex-col gap-3 min-[430px]:flex-row sm:mt-8 sm:gap-4">

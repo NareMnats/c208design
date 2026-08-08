@@ -6,14 +6,17 @@ import ScrollMotion from "@/components/ui/ScrollMotion";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet Nare Movsisyan, the educator & designer behind C208 Design.",
+    "Meet Nare Movsisyan, the educator and graphic designer behind C208 Design, serving schools and organizations across Los Angeles County and Orange County.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const experience = [
   {
     title: "Founder & Creative Director",
     organization: "C208 Design",
-    detail: "Brand identity, print design, environmental design, photography, and other digital work.",
+    detail: "Brand identity, print design, environmental design, web design, and other digital work.",
     date: "2026 – present",
   },
   {
@@ -54,7 +57,6 @@ const education = [
 const proficiencies = [
   "Brand design & identity",
   "Print & publication design",
-  "Photography & art direction",
   "Web & digital design",
   "Apparel & product design",
   "Environmental graphics",

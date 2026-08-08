@@ -5,9 +5,12 @@ import ScrollMotion from "@/components/ui/ScrollMotion";
 import { clients } from "@/data/clients";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "School & Community Design Projects",
   description:
-    "Explore branding, identity, web, print, and environmental design projects by C208 Design.",
+    "Explore school branding, identity, web, print, and environmental design projects by C208 Design in Montebello and surrounding Los Angeles County communities.",
+  alternates: {
+    canonical: "/work",
+  },
 };
 
 export default function ProjectsPage() {

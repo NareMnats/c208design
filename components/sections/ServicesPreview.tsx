@@ -13,11 +13,6 @@ const services = [
       "Campaign materials, publications, signage, banners, apparel, and other designs made for real-world use.",
   },
   {
-    title: "Photography",
-    description:
-      "Authentic photography for campuses, programs, events, athletics, portraits, and community storytelling.",
-  },
-  {
     title: "Digital design",
     description:
       "Websites, social media graphics, presentations, and digital materials that communicate clearly across platforms.",
