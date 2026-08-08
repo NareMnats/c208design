@@ -110,7 +110,7 @@ export default function ProjectLightboxGallery({
             className="fixed inset-0 z-[100] overflow-y-auto bg-[#151313] text-white"
           >
             <header className="sticky top-0 z-10 border-b border-white/15 bg-[#151313]/95 backdrop-blur-md">
-              <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-4 py-4 sm:px-7 lg:px-10">
+              <div className="site-safe-inline mx-auto flex max-w-[1600px] items-center justify-between gap-6 py-4">
                 <div>
                   <h4
                     id={dialogTitleId}
@@ -137,7 +137,7 @@ export default function ProjectLightboxGallery({
               </div>
             </header>
 
-            <div className="mx-auto max-w-[1600px] space-y-4 px-3 py-4 sm:space-y-6 sm:px-6 sm:py-6 lg:px-10 lg:py-10">
+            <div className="site-safe-inline mx-auto max-w-[1600px] space-y-4 py-4 sm:space-y-6 sm:py-6 lg:py-10">
               {images.map((image) => (
                 <figure
                   key={image.src}

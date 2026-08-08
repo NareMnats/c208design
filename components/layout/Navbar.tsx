@@ -85,7 +85,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`z-50 w-full will-change-transform transition-all duration-500 ease-in-out ${
+        className={`z-50 w-full pt-[env(safe-area-inset-top,0px)] will-change-transform transition-all duration-500 ease-in-out ${
           isHomepage ? "fixed left-0 top-0" : "sticky top-0"
         } ${
           isVisible
@@ -185,7 +185,7 @@ export default function Navbar() {
         aria-label="Mobile navigation"
         aria-hidden={!menuOpen}
         inert={!menuOpen}
-        className={`fixed inset-0 z-[60] min-h-dvh bg-[#f2eee9] text-[#111111] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] motion-reduce:duration-0 md:hidden ${
+        className={`fixed inset-0 z-[60] min-h-dvh bg-[#f2eee9] pt-[env(safe-area-inset-top,0px)] text-[#111111] transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] motion-reduce:duration-0 md:hidden ${
           menuOpen
             ? "translate-x-0"
             : "pointer-events-none translate-x-full"

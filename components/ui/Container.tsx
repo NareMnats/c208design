@@ -12,7 +12,7 @@ export default function Container({
   return (
     <div
       {...props}
-      className={`mx-auto w-full max-w-[1400px] px-[22px] sm:px-[31px] md:px-11 lg:px-12 ${className}`}
+      className={`site-container mx-auto w-full max-w-[1400px] ${className}`}
     >
       {children}
     </div>

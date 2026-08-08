@@ -16,8 +16,11 @@
 }
 
 .shell {
-  width: min(1180px, calc(100% - 53px));
+  width: 100%;
+  max-width: calc(1180px + var(--site-gutter-left) + var(--site-gutter-right));
   margin: 0 auto;
+  padding-left: var(--site-gutter-left);
+  padding-right: var(--site-gutter-right);
 }
 
 .hero {
