@@ -644,12 +644,6 @@ export const clients: Client[] = [
           },
         ],
       },
-      {
-        title: "Mockups & Explorations",
-        slug: "mockups-and-explorations",
-        description:
-          "Concept designs, presentation mockups, and visual experiments that explore materials, formats, and new directions.",
-      },
     ],
   },
 ];
