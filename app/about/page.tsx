@@ -146,7 +146,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-t border-black/10 py-16 sm:py-24 lg:py-32">
+      <section className="border-t border-black/10 pt-16 pb-11 sm:pt-24 sm:pb-17 lg:pt-32 lg:pb-22">
         <Container>
           <div
             className="mb-12 sm:mb-16 lg:mb-20"
@@ -197,12 +197,12 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section aria-labelledby="achievements-heading" className="border-t border-black/10 py-16 sm:py-24 lg:py-32">
+      <section aria-labelledby="achievements-heading" className="pt-11 pb-16 sm:pt-17 sm:pb-24 lg:pt-22 lg:pb-32">
         <Container>
           <h2 id="achievements-heading" className="display-heading" data-reveal>
             Selected achievements
           </h2>
-          <ul role="list" className="mt-8 divide-y divide-black/15 border-y border-black/15 sm:mt-12" data-reveal-group>
+          <ul role="list" className="mt-8 divide-y divide-black/15 border-t border-black/15 sm:mt-12" data-reveal-group>
             {achievements.map(({ title, date, detail }) => (
               <li key={title} className="grid gap-3 py-6 md:grid-cols-2 md:gap-12 md:py-8" data-reveal>
                 <div>
@@ -294,7 +294,7 @@ function CvColumn({
 }) {
   return (
     <article
-      className="border-b border-black/15 py-9 md:border-b-0 md:border-r md:px-8 md:py-10 md:first:pl-0 md:last:border-r-0 md:last:pr-0 lg:px-12"
+      className="border-b border-black/15 py-9 last:border-b-0 md:border-b-0 md:border-r md:px-8 md:py-10 md:first:pl-0 md:last:border-r-0 md:last:pr-0 lg:px-12"
       data-reveal
     >
       <h3 className="mb-9 text-2xl tracking-[-0.025em] sm:text-3xl">
