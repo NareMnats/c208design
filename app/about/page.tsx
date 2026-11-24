@@ -65,6 +65,34 @@ const proficiencies = [
   "Short video production & editing",
 ];
 
+const achievements = [
+  {
+    title: "Figma Advisory Board Member",
+    date: "2026–present",
+    detail: "I bring design challenges into my classroom and share what I learn with Figma for Education, helping shape hands-on lessons and projects for K–12 students.",
+  },
+  {
+    title: "Project-based Visual Programming Pathway Lead",
+    date: "2025–present",
+    detail: "I developed Schurr High School’s three-year game design curriculum and teach its 10th-grade pilot course, where students learn to build games in Unity.",
+  },
+  {
+    title: "Engineering & Design Pathway Lead",
+    date: "2022–2025",
+    detail: "I helped lead Schurr’s four-year engineering program, taught ninth graders to build 3D models in CAD, and connected students with working professionals through guest talks and work-based learning experiences.",
+  },
+  {
+    title: "SPARK Program Lead",
+    date: "2022–present",
+    detail: "I coordinate an after-school program where students meet HNTB professionals working on LA Metro projects and explore STEM careers through hands-on activities.",
+  },
+  {
+    title: "College & Career Access Team Member",
+    date: "2022–present",
+    detail: "I work with teachers and counselors to organize Schurr’s College Day and Career Day, bringing college representatives and industry professionals to campus for classroom conversations and interactive fairs.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <ScrollMotion className="bg-white text-[#111111]">
@@ -166,6 +194,25 @@ export default function AboutPage() {
               </ul>
             </CvColumn>
           </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="achievements-heading" className="border-t border-black/10 py-16 sm:py-24 lg:py-32">
+        <Container>
+          <h2 id="achievements-heading" className="display-heading" data-reveal>
+            Selected achievements
+          </h2>
+          <ul role="list" className="mt-8 divide-y divide-black/15 border-y border-black/15 sm:mt-12" data-reveal-group>
+            {achievements.map(({ title, date, detail }) => (
+              <li key={title} className="grid gap-3 py-6 md:grid-cols-2 md:gap-12 md:py-8" data-reveal>
+                <div>
+                  <h3 className="text-xl leading-snug sm:text-2xl">{title}</h3>
+                  <p className="mt-1 text-sm text-black/65">{date}</p>
+                </div>
+                <p className="max-w-prose text-base leading-7 text-black/70">{detail}</p>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
